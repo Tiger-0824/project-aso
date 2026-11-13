@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>PROJECT ASO — OPSC ASO Preparation & CBT Platform</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="theme-welcome">
+
+  <!-- ==================== SCREEN 01: PERSONALISED ENVELOPE WELCOME ==================== -->
+  <section id="screen-welcome" class="welcome-screen">
+    <div class="welcome-particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="welcome-container">
+      <div class="brand-emblem">
+        <span class="emblem-pill">OPSC ASO • 1915–1947+ SPECIAL EDITION</span>
+        <h1 class="brand-title">PROJECT ASO</h1>
+        <p class="brand-tagline">Her Journey. Her Preparation. Her Achievement.</p>
+      </div>
+
+      <!-- Interactive Envelope -->
+      <div id="envelope-wrapper" class="envelope-wrapper" role="button" tabindex="0" aria-label="Open personal welcome envelope">
+        <div class="envelope-box" id="envelope-box">
+          <div class="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-seal">✦</div>
+          <div class="envelope-label">Tap to Open Your Note</div>
+        </div>
+      </div>
+
+      <!-- Revealed Welcome Card -->
+      <div id="welcome-letter-card" class="welcome-letter-card hidden">
+        <div class="letter-header">
+          <span class="letter-badge">Personal Note</span>
+          <h2 id="welcome-greeting">Welcome, Future ASO!</h2>
+        </div>
+        <p id="welcome-body" class="letter-body">
+          Every big achievement begins with steady, fearless steps. This space is built exclusively for your OPSC ASO preparation—combining real exam discipline with calm, focused revision.
+        </p>
+        <div class="letter-signoff" id="welcome-signoff">— With best wishes for your journey</div>
+        <button id="btn-enter-world" class="btn btn-primary btn-lg btn-block">
+          Enter Study World →
+        </button>
+      </div>
+
+      <button id="btn-skip-intro" class="btn-link skip-intro-btn">
+        Skip Introduction →
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN APPLICATION SHELL (8 SECTIONS) ==================== -->
+  <div id="app-shell" class="app-shell hidden">
+
+    <!-- Top Header Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button id="btn-mobile-menu" class="icon-btn mobile-only" aria-label="Open menu">☰</button>
+        <div class="topbar-brand">
+          <span class="topbar-title">PROJECT ASO</span>
+          <span id="topbar-section-label" class="topbar-subtitle">Home Dashboard</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span id="topbar-streak-pill" class="streak-pill" title="Current Study Streak">🔥 0d</span>
+        <button id="btn-quick-backup" class="icon-btn" title="Export Backup" aria-label="Export Backup">💾</button>
+      </div>
+    </header>
+
+    <!-- Backup Reminder Toast -->
+    <div id="backup-reminder-bar" class="backup-banner hidden">
+      <span>Reminder: Export a JSON backup to protect your local study records.</span>
+      <div>
+        <button id="btn-banner-export" class="btn btn-xs btn-primary">Export Now</button>
+        <button id="btn-banner-dismiss" class="btn btn-xs btn-ghost">Later</button>
+      </div>
+    </div>
+
+    <div class="app-layout">
+      <!-- Navigation Sidebar / Drawer (8 Sections) -->
+      <aside id="nav-drawer" class="nav-drawer">
+        <div class="nav-drawer-header mobile-only">
+          <span>Navigation</span>
+          <button id="btn-close-menu" class="icon-btn" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="nav-list" aria-label="Primary Navigation">
+          <button class="nav-item active" data-nav="dashboard"><span class="nav-num">01</span> Home Dashboard</button>
+          <button class="nav-item" data-nav="exam-centre"><span class="nav-num">02</span> Examination Centre</button>
+          <button class="nav-item" data-nav="learning"><span class="nav-num">03</span> Learning Centre</button>
+          <button class="nav-item" data-nav="progress"><span class="nav-num">04</span> My Progress</button>
+          <button class="nav-item" data-nav="achievements"><span class="nav-num">05</span> Achievement Arena</button>
+          <button class="nav-item" data-nav="motivation"><span class="nav-num">06</span> Motivation Corner</button>
+          <button class="nav-item" data-nav="profile"><span class="nav-num">07</span> Candidate Profile</button>
+          <button class="nav-item nav-item-admin" data-nav="organiser"><span class="nav-num">08</span> Organiser Control</button>
+        </nav>
+        <div class="nav-footer">
+          <small>OPSC ASO • 1915–1947+ Bank</small>
+          <small id="nav-bank-count">100 MCQs Loaded</small>
+        </div>
+      </aside>
+      <div id="nav-backdrop" class="nav-backdrop hidden"></div>
+
+      <!-- Main Workspace -->
+      <main id="main-content" class="main-content">
+
+        <!-- ==================== 01. HOME DASHBOARD ==================== -->
+        <section id="view-dashboard" class="view-section active">
+          <div class="hero-card">
+            <div class="hero-top">
+              <div>
+                <span class="chip chip-soft" id="dash-target-badge">Target: OPSC ASO</span>
+                <h2 id="dash-greeting" class="hero-title">Welcome back!</h2>
+                <p id="dash-tease" class="hero-tease">The Indian freedom struggle isn't going to revise itself.</p>
+              </div>
+              <button id="btn-dash-start-mock" class="btn btn-primary btn-lg">
+                Start Full ASO Mock (90m)
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Key KPI Cards -->
+          <div class="stats-grid-4">
+            <div class="stat-card">
+              <span class="stat-label">Last Exam Score</span>
+              <strong id="dash-last-score" class="stat-value">—</strong>
+              <span id="dash-last-meta" class="stat-sub">No attempts yet</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Personal Best</span>
+              <strong id="dash-best-score" class="stat-value">—</strong>
+              <span class="stat-sub">Out of 100 Marks</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Current Streak</span>
+              <strong id="dash-streak" class="stat-value">0 Days</strong>
+              <span id="dash-today-status" class="stat-sub">Complete a session today</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Syllabus Units</span>
+              <strong id="dash-units-done" class="stat-value">0 / 5</strong>
+              <span class="stat-sub">1915–1947+ Coverage</span>
+            </div>
+          </div>
+
+          <!-- Daily Study Challenge & Motivation -->
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>Daily Study Challenge</h3>
+                <span id="daily-challenge-status" class="badge">In Progress</span>
+              </div>
+              <p id="daily-challenge-desc">Complete at least 20 practice MCQs or 1 mock test today.</p>
+              <div class="progress-track">
+                <div id="daily-challenge-bar" class="progress-fill" style="width: 0%;"></div>
+              </div>
+              <div class="card-footer-row">
+                <span id="daily-challenge-count">0 / 20 Questions today</span>
+                <button class="btn btn-sm btn-secondary" data-goto="exam-centre">Practice Now</button>
+              </div>
+            </div>
+
+            <div class="card card-accent">
+              <div class="card-header">
+                <h3>Motivation of the Day</h3>
+                <button id="btn-refresh-quote" class="btn btn-xs btn-ghost">New Note ↻</button>
+              </div>
+              <blockquote id="dash-motivation-quote" class="quote-box">
+                "Success in OPSC ASO is built on accuracy—knowing when to skip a doubtful option saves 0.25 marks every time."
+              </blockquote>
+              <div class="upcoming-target-box">
+                <strong>Upcoming Revision Focus:</strong>
+                <span id="dash-revision-target">Unit 1: Arrival of Gandhi & Early Mass Movements (1915–1927)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Syllabus Unit Quick Cards -->
+          <div class="card">
+            <div class="card-header">
+              <h3>1915–1947+ Syllabus Units (20 MCQs Each)</h3>
+              <button class="btn btn-sm btn-ghost" data-goto="learning">Open Learning Centre →</button>
+            </div>
+            <div id="dash-units-list" class="unit-cards-grid"></div>
+          </div>
+        </section>
+
+        <!-- ==================== 02. EXAMINATION CENTRE ==================== -->
+        <section id="view-exam-centre" class="view-section hidden">
+          <div class="section-header">
+            <h2>Examination Centre</h2>
+            <p>Choose between official OPSC ASO CBT simulation or expressive practice modes.</p>
+          </div>
+
+          <!-- 6 Examination Modes Grid -->
+          <div class="modes-grid">
+            <div class="mode-card mode-featured" data-mode="full_mock">
+              <span class="mode-tag">Official CBT Simulation</span>
+              <h3>1. Full ASO Mock</h3>
+              <p>100 Questions • 90 Minutes • +1 / -0.25 Marking • End-of-Exam Evaluation</p>
+              <button class="btn btn-primary btn-block">Configure Full Mock</button>
+            </div>
+
+            <div class="mode-card" data-mode="unit_practice">
+              <span class="mode-tag">Focused Unit Drill</span>
+              <h3>2. Unit-wise Practice</h3>
+              <p>20 Questions from any selected syllabus unit (Units 1 to 5).</p>
+              <button class="btn btn-secondary btn-block">Select Unit</button>
+            </div>
+
+            <div class="mode-card" data-mode="difficulty">
+              <span class="mode-tag">Tier Mastery</span>
+              <h3>3. Difficulty Challenge</h3>
+              <p>Filter strictly by Easy (35), Medium (45), or Hard (20) questions.</p>
+              <button class="btn btn-secondary btn-block">Choose Difficulty</button>
+            </div>
+
+            <div class="mode-card" data-mode="rapid_fire">
+              <span class="mode-tag">Speed Drill</span>
+              <h3>4. Rapid Fire</h3>
+              <p>10 or 15 fast-paced questions with optional per-question timer.</p>
+              <button class="btn btn-secondary btn-block">Configure Rapid Fire</button>
+            </div>
+
+            <div class="mode-card" data-mode="mistake_revision">
+              <span class="mode-tag">Weakness Fixer</span>
+              <h3>5. Mistake Revision</h3>
+              <p>Re-attempt previously wrong and skipped questions from your history.</p>
+              <button class="btn btn-secondary btn-block">Start Mistake Drill</button>
+            </div>
+
+            <div class="mode-card" data-mode="surprise">
+              <span class="mode-tag">Mixed Challenge</span>
+              <h3>6. Surprise Test</h3>
+              <p>Randomly shuffled mix across all five 1915–1947+ units and formats.</p>
+              <button class="btn btn-secondary btn-block">Launch Surprise</button>
+            </div>
+          </div>
+
+          <!-- Mode Configuration Panel -->
+          <div id="mode-config-panel" class="card config-panel hidden">
+            <div class="card-header">
+              <h3 id="config-panel-title">Configure Examination Mode</h3>
+              <button id="btn-close-config" class="btn btn-xs btn-ghost">✕ Cancel</button>
+            </div>
+            <div id="config-panel-body" class="config-form"></div>
+            <div class="config-actions">
+              <button id="btn-proceed-mode" class="btn btn-primary btn-lg">Proceed →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SCREEN 04: FULL EXAM INSTRUCTIONS ==================== -->
+        <section id="view-instructions" class="view-section hidden">
+          <div class="card instructions-card">
+            <div class="instructions-header">
+              <span class="badge badge-navy">OPSC ASO PAPER-I CBT PROTOCOL</span>
+              <h2>General Instructions — Full Mock Examination</h2>
+              <p>Indian National Movement (1915–1947) & Immediate Post-Independence Consolidation</p>
+            </div>
+
+            <div class="instructions-body">
+              <div class="info-strip">
+                <div><strong>Total Questions:</strong> 100 MCQs</div>
+                <div><strong>Maximum Marks:</strong> 100 Marks</div>
+                <div><strong>Duration:</strong> 90 Minutes</div>
+                <div><strong>Marking:</strong> +1.00 / -0.25</div>
+              </div>
+
+              <h4>1. Examination Rules & Marking Scheme</h4>
+              <ul>
+                <li>Each question carries <strong>1 mark</strong> for a correct response.</li>
+                <li>There is a negative marking of <strong>0.25 marks</strong> for every incorrect response.</li>
+                <li>Unattempted questions carry <strong>0 marks</strong> (no penalty).</li>
+                <li>Personalised teasing/encouragement messages are strictly disabled during the Full Mock to preserve real exam focus.</li>
+              </ul>
+
+              <h4>2. Timer & Auto-Submission Policy</h4>
+              <ul>
+                <li>The 90-minute countdown clock uses real elapsed-time tracking and auto-saves your answers continuously.</li>
+                <li>Reloading the browser will restore your active session without resetting the timer.</li>
+                <li>When the timer reaches <code>00:00</code>, the examination will automatically submit.</li>
+              </ul>
+
+              <h4>3. Question Palette Legend (5 Statuses)</h4>
+              <div class="legend-grid">
+                <div class="legend-item"><span class="pal-dot st-not-visited">1</span> Not Visited</div>
+                <div class="legend-item"><span class="pal-dot st-not-answered">2</span> Not Answered</div>
+                <div class="legend-item"><span class="pal-dot st-answered">3</span> Answered</div>
+                <div class="legend-item"><span class="pal-dot st-marked">4</span> Marked for Review</div>
+                <div class="legend-item"><span class="pal-dot st-ans-marked">5</span> Answered & Marked</div>
+              </div>
+
+              <div class="disclaimer-note">
+                <strong>Practice Benchmark Note:</strong> Cutoff indicators shown in the post-exam scorecard (35% UR/SEBC, 30% SC/ST, 28% PwD) serve as self-evaluation benchmarks based on general OPSC qualifying rules and do not represent an official OPSC result.
+              </div>
+            </div>
+
+            <div class="instructions-footer">
+              <label class="checkbox-label">
+                <input type="checkbox" id="chk-confirm-instructions" />
+                <span>I have read and understood all examination rules, negative marking (+1 / -0.25), and auto-submission policies.</span>
+              </label>
+              <div class="btn-row">
+                <button id="btn-back-from-instructions" class="btn btn-ghost">← Back</button>
+                <button id="btn-begin-full-mock" class="btn btn-primary btn-lg" disabled>I am Ready to Begin</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SCREEN 05 & 06: ACTIVE EXAM / PRACTICE ARENA ==================== -->
+        <section id="view-arena" class="view-section hidden">
+          <!-- Arena Sticky Top Bar -->
+          <div class="arena-topbar">
+            <div class="arena-meta">
+              <span id="arena-mode-badge" class="badge">FULL ASO MOCK</span>
+              <span id="arena-unit-badge" class="badge badge-outline">Unit 1</span>
+              <span id="arena-diff-badge" class="badge badge-outline">Medium</span>
+              <span id="arena-type-badge" class="badge badge-outline">Direct MCQ</span>
+            </div>
+            <div class="arena-controls-top">
+              <div id="arena-timer-box" class="timer-box">
+                <span>⏱</span>
+                <strong id="arena-timer-display">01:30:00</strong>
+              </div>
+              <button id="btn-toggle-palette" class="btn btn-sm btn-secondary mobile-only">
+                Grid (<span id="mobile-pal-count">1/100</span>)
+              </button>
+            </div>
+          </div>
+
+          <!-- Practice Mode Teasing / Feedback Toast -->
+          <div id="practice-tease-banner" class="practice-tease hidden"></div>
+
+          <!-- Arena Split Layout (Left Question, Right Palette on Desktop) -->
+          <div class="arena-layout">
+            <div class="arena-main">
+              <div class="question-card" id="question-card">
+                <div class="question-card-header">
+                  <span id="q-number-label" class="q-number">Question 1 of 100</span>
+                  <div class="q-header-right">
+                    <span id="q-topic-label" class="q-topic">Champaran Satyagraha</span>
+                    <!-- Confidence Tag (Practice Mode Only) -->
+                    <div id="confidence-box" class="confidence-box hidden">
+                      <button type="button" class="conf-btn" data-conf="sure">✓ Sure</button>
+                      <button type="button" class="conf-btn" data-conf="guess">? Guess</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="q-text" class="q-text">Loading question...</div>
+
+                <div id="q-options-list" class="options-list"></div>
+
+                <!-- Immediate Practice Explanation Drawer -->
+                <div id="practice-instant-feedback" class="instant-feedback hidden"></div>
+              </div>
+
+              <!-- Bottom Action Bar -->
+              <div class="arena-bottom-bar">
+                <div class="arena-btn-group">
+                  <button id="btn-q-prev" class="btn btn-ghost">← Prev</button>
+                  <button id="btn-q-clear" class="btn btn-ghost">Clear</button>
+                  <button id="btn-q-mark" class="btn btn-secondary">Mark for Review & Next</button>
+                </div>
+                <div class="arena-btn-group">
+                  <button id="btn-q-save-next" class="btn btn-primary">Save & Next →</button>
+                  <button id="btn-submit-exam" class="btn btn-danger">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question Palette Sidebar / Mobile Drawer -->
+            <aside id="arena-palette-drawer" class="palette-panel">
+              <div class="palette-header">
+                <h4>Question Palette</h4>
+                <button id="btn-close-palette" class="icon-btn mobile-only">✕</button>
+              </div>
+              <div class="palette-summary" id="palette-summary"></div>
+              <div class="palette-grid" id="palette-grid"></div>
+              <div class="palette-footer">
+                <button id="btn-palette-submit" class="btn btn-danger btn-block">Submit Paper</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ==================== RESULT REVEAL & SCORECARD SEQUENCE ==================== -->
+        <section id="view-results" class="view-section hidden">
+          <!-- Step 1: Submission Confirmation -->
+          <div class="result-confirm-banner">
+            ✓ Your examination has been submitted successfully.
+          </div>
+
+          <!-- Step 2: Animated Score Reveal -->
+          <div class="result-hero-card">
+            <span id="res-mode-title" class="badge badge-gold">FULL ASO MOCK RESULT</span>
+            <div class="score-reveal-circle">
+              <span class="score-label">NET SCORE</span>
+              <strong id="res-animated-score" class="score-big">0.00</strong>
+              <span id="res-max-score" class="score-out-of">out of 100</span>
+            </div>
+            <div id="res-benchmark-badge" class="benchmark-pill">Practice Benchmark: Evaluating...</div>
+          </div>
+
+          <!-- Step 3: Official-Style Scorecard -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Official-Style Scorecard</h3>
+              <span id="res-date-label" class="stat-sub"></span>
+            </div>
+            <div class="scorecard-metrics">
+              <div class="sc-item"><span>Gross Marks</span><strong id="res-gross">0.00</strong></div>
+              <div class="sc-item"><span>Negative Deducted</span><strong id="res-negative" class="text-danger">-0.00</strong></div>
+              <div class="sc-item"><span>Correct</span><strong id="res-correct" class="text-success">0</strong></div>
+              <div class="sc-item"><span>Incorrect</span><strong id="res-wrong" class="text-danger">0</strong></div>
+              <div class="sc-item"><span>Unattempted</span><strong id="res-skipped">0</strong></div>
+              <div class="sc-item"><span>Accuracy</span><strong id="res-accuracy">0%</strong></div>
+              <div class="sc-item"><span>Time Taken</span><strong id="res-time">00m 00s</strong></div>
+              <div class="sc-item"><span>Attempt Rate</span><strong id="res-attempt-rate">0%</strong></div>
+            </div>
+          </div>
+
+          <!-- Step 4: Performance Analytics (5 Units, 4 Formats, 3 Difficulties) -->
+          <div class="grid-3">
+            <div class="card">
+              <h4>Syllabus Unit Breakdown</h4>
+              <div id="res-unit-bars" class="breakdown-list"></div>
+            </div>
+            <div class="card">
+              <h4>Question Format Breakdown</h4>
+              <div id="res-format-bars" class="breakdown-list"></div>
+            </div>
+            <div class="card">
+              <h4>Difficulty Tier Breakdown</h4>
+              <div id="res-diff-bars" class="breakdown-list"></div>
+            </div>
+          </div>
+
+          <!-- Step 5: Achievement Unlock -->
+          <div id="res-achievements-box" class="card card-gold hidden">
+            <h3>🏆 Newly Unlocked Achievements</h3>
+            <div id="res-unlocked-list" class="unlocked-badges-row"></div>
+          </div>
+
+          <!-- Step 6: Personal Letter (Placed After Scorecard) -->
+          <div class="card card-rose">
+            <div class="card-header">
+              <h3>💌 A Note After Your Attempt</h3>
+              <span class="badge">Personal Letter</span>
+            </div>
+            <p id="res-personal-letter" class="letter-body"></p>
+          </div>
+
+          <!-- Step 7: Next Preparation Recommendation -->
+          <div class="card">
+            <h3>🎯 Recommended Next Step</h3>
+            <p id="res-next-recommendation"></p>
+            <div class="result-actions-bar">
+              <button id="btn-res-retry-full" class="btn btn-primary">Retry Same Mode</button>
+              <button id="btn-res-retry-wrong" class="btn btn-secondary">Retry Incorrect Questions</button>
+              <button id="btn-res-review-all" class="btn btn-secondary">Review All Answers</button>
+              <button id="btn-res-download-scorecard" class="btn btn-ghost">Print / Save Scorecard</button>
+              <button id="btn-res-certificate" class="btn btn-gold">Download Certificate</button>
+              <button id="btn-res-dashboard" class="btn btn-ghost">Return to Dashboard</button>
+            </div>
+          </div>
+
+          <!-- Inline Answer Review Drawer -->
+          <div id="res-review-drawer" class="card hidden">
+            <div class="card-header">
+              <h3>Detailed Answer Key & Explanations</h3>
+              <div class="filter-pills" id="res-review-filters">
+                <button class="pill active" data-rfilter="all">All</button>
+                <button class="pill" data-rfilter="wrong">Incorrect</button>
+                <button class="pill" data-rfilter="skipped">Unattempted</button>
+                <button class="pill" data-rfilter="correct">Correct</button>
+              </div>
+            </div>
+            <div id="res-review-list" class="review-list"></div>
+          </div>
+        </section>
+
+        <!-- ==================== 03. LEARNING CENTRE ==================== -->
+        <section id="view-learning" class="view-section hidden">
+          <div class="section-header">
+            <h2>Learning Centre & Mistake Notebook</h2>
+            <p>Browse verified explanations, historical references, and revise saved mistakes.</p>
+          </div>
+
+          <div class="card">
+            <div class="filter-toolbar">
+              <select id="learn-unit-filter" class="input">
+                <option value="all">All 5 Units (100 MCQs)</option>
+                <option value="1">Unit 1: Early Gandhian Era (1915–1927)</option>
+                <option value="2">Unit 2: Civil Disobedience & Reforms (1927–1937)</option>
+                <option value="3">Unit 3: WWII, Quit India & INA (1938–1945)</option>
+                <option value="4">Unit 4: Freedom, Partition & Post-1947 (1945–1950)</option>
+                <option value="5">Unit 5: Odisha Freedom Struggle (1915–1948)</option>
+              </select>
+              <select id="learn-diff-filter" class="input">
+                <option value="all">All Difficulties</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+              <select id="learn-type-filter" class="input">
+                <option value="all">All Formats</option>
+                <option value="Direct">Direct Concept/Fact</option>
+                <option value="Match">Match the Following</option>
+                <option value="Chronology">Chronological Ordering</option>
+                <option value="Statement">Multi-Statement / Assertion</option>
+              </select>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="learn-mistakes-only" />
+                <span>Mistake Notebook Only (<span id="mistake-count-label">0</span>)</span>
+              </label>
+            </div>
+            <input type="search" id="learn-search-input" class="input" placeholder="Search topics, leaders, acts, dates (e.g., Champaran, Inchudi, 1935)..." />
+          </div>
+
+          <div id="learning-questions-list" class="review-list"></div>
+        </section>
+
+        <!-- ==================== 04. MY PROGRESS & STUDY CALENDAR ==================== -->
+        <section id="view-progress" class="view-section hidden">
+          <div class="section-header">
+            <h2>My Progress, Calendar & Weakness Report</h2>
+            <p>Track accuracy trends, daily consistency, and weak topics needing revision.</p>
+          </div>
+
+          <!-- Intelligent Weakness Report -->
+          <div class="card">
+            <div class="card-header">
+              <h3>🧠 Intelligent Weakness Report</h3>
+              <button id="btn-practice-weakest" class="btn btn-sm btn-primary">Practice Weakest Area</button>
+            </div>
+            <div id="weakness-report-body"></div>
+          </div>
+
+          <!-- Daily Study Calendar -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📅 Daily Study Calendar</h3>
+              <span id="calendar-month-label" class="badge"></span>
+            </div>
+            <div id="study-calendar-grid" class="calendar-grid"></div>
+            <div class="calendar-legend">
+              <span><i class="cal-dot active"></i> Active Study / Test Day</span>
+              <span><i class="cal-dot today"></i> Today</span>
+            </div>
+          </div>
+
+          <!-- Attempt History Table -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Examination & Practice History</h3>
+            </div>
+            <div id="attempt-history-list" class="history-list"></div>
+          </div>
+        </section>
+
+        <!-- ==================== 05. ACHIEVEMENT ARENA ==================== -->
+        <section id="view-achievements" class="view-section hidden">
+          <div class="section-header">
+            <h2>Achievement Arena & Secret Surprises</h2>
+            <p>Earn badges and unlock hidden milestone notes as your OPSC ASO score climbs.</p>
+          </div>
+          <div id="achievements-grid" class="badges-grid"></div>
+        </section>
+
+        <!-- ==================== 06. MOTIVATION CORNER & SECRET LETTERS ==================== -->
+        <section id="view-motivation" class="view-section hidden">
+          <div class="section-header">
+            <h2>Motivation Corner & Personal Letters</h2>
+            <p>Daily encouragement, light teasing, and milestone letters written for you.</p>
+          </div>
+          <div id="letters-grid" class="letters-grid"></div>
+        </section>
+
+        <!-- ==================== 07. CANDIDATE PROFILE ==================== -->
+        <section id="view-profile" class="view-section hidden">
+          <div class="section-header">
+            <h2>Candidate Profile & Preferences</h2>
+            <p>Personalise your greeting, preparation targets, and practice feedback behavior.</p>
+          </div>
+          <form id="profile-form" class="card form-grid">
+            <div class="form-group">
+              <label for="prof-name">Candidate Name</label>
+              <input type="text" id="prof-name" class="input" placeholder="Enter candidate name" />
+            </div>
+            <div class="form-group">
+              <label for="prof-target-exam">Target Examination</label>
+              <input type="text" id="prof-target-exam" class="input" value="OPSC ASO (Secretariat Service)" />
+            </div>
+            <div class="form-group">
+              <label for="prof-target-score">Personal Target Score (out of 100)</label>
+              <input type="number" id="prof-target-score" class="input" min="35" max="100" value="75" />
+            </div>
+            <div class="form-group">
+              <label for="prof-daily-goal">Daily Question Goal</label>
+              <input type="number" id="prof-daily-goal" class="input" min="5" max="200" value="20" />
+            </div>
+            <div class="form-group">
+              <label for="prof-tease-freq">Practice Teasing & Encouragement Frequency</label>
+              <select id="prof-tease-freq" class="input">
+                <option value="moderate">Moderate (Recommended)</option>
+                <option value="low">Low (Occasional)</option>
+                <option value="off">Off (Silent Practice)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prof-default-feedback">Default Practice Feedback Timing</label>
+              <select id="prof-default-feedback" class="input">
+                <option value="immediate">Immediate Feedback</option>
+                <option value="every5">After Every 5 Questions</option>
+                <option value="end">After Completing Test</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save Profile Preferences</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ==================== 08. ORGANISER CONTROL PANEL ==================== -->
+        <section id="view-organiser" class="view-section hidden">
+          <!-- PIN Lock Screen -->
+          <div id="admin-lock-card" class="card admin-lock-card">
+            <span class="badge">PRIVATE ORGANISER AREA</span>
+            <h2>Organiser Control Panel</h2>
+            <p class="security-notice">
+              <strong>Static Hosting Security Notice:</strong> Because this site runs on static GitHub Pages without a backend server, browser PIN protection prevents casual clicks on this device, while permanent updates to the public repository require exporting <code>questions.js</code> and committing via Git/Acode.
+            </p>
+            <div class="pin-entry-row">
+              <input type="password" id="admin-pin-input" class="input" placeholder="Enter Organiser PIN (Default: 1947)" maxlength="12" />
+              <button id="btn-unlock-admin" class="btn btn-primary">Unlock Panel</button>
+            </div>
+          </div>
+
+          <!-- Unlocked Admin Workspace -->
+          <div id="admin-workspace" class="hidden">
+            <div class="section-header admin-header-row">
+              <div>
+                <h2>Organiser Control Panel</h2>
+                <p>Manage questions, personal messages, candidate settings, and JSON/GitHub exports.</p>
+              </div>
+              <button id="btn-lock-admin" class="btn btn-sm btn-ghost">Lock Panel 🔒</button>
+            </div>
+
+            <div class="admin-tabs" id="admin-tabs">
+              <button class="pill active" data-atab="overview">Dashboard</button>
+              <button class="pill" data-atab="questions">Question & Answer Manager</button>
+              <button class="pill" data-atab="messages">Message & Letter Manager</button>
+              <button class="pill" data-atab="settings">Website & PIN Settings</button>
+              <button class="pill" data-atab="backup">Backup & GitHub Export</button>
+            </div>
+
+            <!-- Admin Tab 1: Overview -->
+            <div id="atab-overview" class="admin-tab-pane active">
+              <div class="stats-grid-4" id="admin-stats-grid"></div>
+            </div>
+
+            <!-- Admin Tab 2: Question & Answer Manager -->
+            <div id="atab-questions" class="admin-tab-pane hidden">
+              <div class="card">
+                <h3 id="q-form-heading">Add / Edit Question</h3>
+                <form id="admin-question-form" class="form-grid">
+                  <input type="hidden" id="aq-id" />
+                  <div class="form-group">
+                    <label>Syllabus Unit</label>
+                    <select id="aq-unit" class="input" required>
+                      <option value="1">Unit 1: Early Gandhian Era (1915–1927)</option>
+                      <option value="2">Unit 2: Civil Disobedience & Reforms (1927–1937)</option>
+                      <option value="3">Unit 3: WWII, Quit India & INA (1938–1945)</option>
+                      <option value="4">Unit 4: Freedom, Partition & Post-1947 (1945–1950)</option>
+                      <option value="5">Unit 5: Odisha Freedom Struggle (1915–1948)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Topic Tag</label>
+                    <input type="text" id="aq-topic" class="input" placeholder="e.g., Dandi Salt March" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Difficulty</label>
+                    <select id="aq-difficulty" class="input" required>
+                      <option value="Easy">Easy</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Hard">Hard</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Question Format</label>
+                    <select id="aq-type" class="input" required>
+                      <option value="Direct">Direct Concept / Fact</option>
+                      <option value="Match">Match the Following</option>
+                      <option value="Chronology">Chronological Ordering</option>
+                      <option value="Statement">Multi-Statement / Assertion</option>
+                    </select>
+                  </div>
+                  <div class="form-group full-span">
+                    <label>Question Text</label>
+                    <textarea id="aq-question" class="input" rows="3" required></textarea>
+                  </div>
+                  <div class="form-group"><label>Option A</label><input type="text" id="aq-opt-0" class="input" required /></div>
+                  <div class="form-group"><label>Option B</label><input type="text" id="aq-opt-1" class="input" required /></div>
+                  <div class="form-group"><label>Option C</label><input type="text" id="aq-opt-2" class="input" required /></div>
+                  <div class="form-group"><label>Option D</label><input type="text" id="aq-opt-3" class="input" required /></div>
+                  <div class="form-group">
+                    <label>Verified Correct Option (Exactly One)</label>
+                    <select id="aq-answer" class="input" required>
+                      <option value="0">Option A</option>
+                      <option value="1">Option B</option>
+                      <option value="2">Option C</option>
+                      <option value="3">Option D</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Historical Reference</label>
+                    <input type="text" id="aq-ref" class="input" placeholder="e.g., Spectrum Modern India / OPSC Syllabus" />
+                  </div>
+                  <div class="form-group full-span">
+                    <label>Explanation</label>
+                    <textarea id="aq-explanation" class="input" rows="2" required></textarea>
+                  </div>
+                  <div class="form-actions full-span">
+                    <button type="submit" class="btn btn-primary">Save Question</button>
+                    <button type="button" id="btn-aq-reset" class="btn btn-ghost">Reset Form</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3>Existing Question Bank</h3>
+                  <input type="search" id="admin-q-search" class="input input-sm" placeholder="Filter by ID or text..." />
+                </div>
+                <div id="admin-q-list" class="admin-list"></div>
+              </div>
+            </div>
+
+            <!-- Admin Tab 3: Message & Letter Manager -->
+            <div id="atab-messages" class="admin-tab-pane hidden">
+              <div class="card">
+                <h3>Customise Welcome, Teasing & Secret Letters</h3>
+                <form id="admin-msg-form" class="form-grid">
+                  <div class="form-group full-span">
+                    <label>Welcome Envelope Greeting</label>
+                    <input type="text" id="am-welcome-title" class="input" />
+                  </div>
+                  <div class="form-group full-span">
+                    <label>Welcome Envelope Message</label>
+                    <textarea id="am-welcome-body" class="input" rows="3"></textarea>
+                  </div>
+                  <div class="form-group full-span">
+                    <label>Add New Teasing / Encouragement Line</label>
+                    <div class="inline-add-row">
+                      <input type="text" id="am-new-tease" class="input" placeholder="Write a light teasing or motivational message..." />
+                      <button type="button" id="btn-add-tease" class="btn btn-secondary">Add</button>
+                    </div>
+                  </div>
+                  <div class="form-actions full-span">
+                    <button type="submit" class="btn btn-primary">Save Message Settings</button>
+                  </div>
+                </form>
+                <div id="admin-tease-list" class="admin-list"></div>
+              </div>
+            </div>
+
+            <!-- Admin Tab 4: Website & PIN Settings -->
+            <div id="atab-settings" class="admin-tab-pane hidden">
+              <div class="card form-grid">
+                <div class="form-group">
+                  <label>Organiser Access PIN</label>
+                  <input type="text" id="as-new-pin" class="input" maxlength="12" />
+                </div>
+                <div class="form-group">
+                  <label>Organiser Sign-Off Name</label>
+                  <input type="text" id="as-organiser-name" class="input" placeholder="e.g., Your Mentor" />
+                </div>
+                <div class="form-actions full-span">
+                  <button type="button" id="btn-save-admin-settings" class="btn btn-primary">Update Settings</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Admin Tab 5: Backup & GitHub Export -->
+            <div id="atab-backup" class="admin-tab-pane hidden">
+              <div class="card">
+                <h3>JSON Backup & Restore</h3>
+                <p>Export complete progress or granular datasets. Restoring validates schema structure before overwriting.</p>
+                <div class="btn-row wrap">
+                  <button id="btn-exp-all" class="btn btn-primary">Export Full Backup (.json)</button>
+                  <button id="btn-exp-attempts" class="btn btn-secondary">Export Attempts Only</button>
+                  <button id="btn-exp-achievements" class="btn btn-secondary">Export Achievements</button>
+                  <button id="btn-exp-prefs" class="btn btn-secondary">Export Preferences</button>
+                </div>
+                <hr class="divider" />
+                <div class="form-group">
+                  <label>Restore Backup JSON File</label>
+                  <input type="file" id="import-backup-file" accept=".json" class="input" />
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Export Updated <code>questions.js</code> for GitHub / Acode</h3>
+                <p>If you added or edited questions in the browser, copy or download the updated <code>questions.js</code> file below and commit it to your GitHub repository.</p>
+                <div class="btn-row">
+                  <button id="btn-download-questions-js" class="btn btn-primary">Download questions.js</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== CERTIFICATE / PRINTABLE MODAL ==================== -->
+  <div id="certificate-modal" class="modal-overlay hidden">
+    <div class="modal-card certificate-modal-card">
+      <div class="certificate-frame" id="certificate-frame">
+        <div class="cert-border">
+          <span class="cert-eyebrow">PROJECT ASO • OPSC ASO PREPARATION SERIES</span>
+          <h2>Certificate of Achievement</h2>
+          <p>This certifies that</p>
+          <h3 id="cert-candidate-name" class="cert-name">Candidate</h3>
+          <p id="cert-description">has successfully completed the OPSC ASO 1915–1947+ Examination Simulation</p>
+          <div class="cert-stats-row">
+            <div><span>Score</span><strong id="cert-score">0 / 100</strong></div>
+            <div><span>Accuracy</span><strong id="cert-accuracy">0%</strong></div>
+            <div><span>Date</span><strong id="cert-date">—</strong></div>
+          </div>
+          <div class="cert-footer">
+            <span>Syllabus: Indian Freedom Movement (1915–1947+)</span>
+            <span id="cert-sign">PROJECT ASO Organiser</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions no-print">
+        <button id="btn-print-certificate" class="btn btn-primary">Print / Save as PDF</button>
+        <button id="btn-close-certificate" class="btn btn-ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Load 100-MCQ Bank first, then Application Engine -->
+  <script src="./questions.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
