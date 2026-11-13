@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samal Rout Cup (SRC) - Season 10 | Master Blaster Tribute</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700;800&family=Teko:wght@600;700&display=swap');
+        
+        :root {
+            --bg-deep: #030712;
+            --electric-cyan: #00F0FF;
+            --laser-blue: #0284C7;
+            --pure-gold: #FFD700;
+            --neon-amber: #FFB703;
+            --blaze-orange: #FF5400;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.35) 0%, rgba(2, 132, 199, 0.25) 25%, rgba(10, 25, 47, 0.95) 55%, rgba(3, 7, 18, 0.98) 90%),
+                repeating-linear-gradient(45deg, rgba(255, 215, 0, 0.02) 0px, rgba(255, 215, 0, 0.02) 2px, transparent 2px, transparent 12px);
+            color: #FFFDF5;
+            overflow-x: hidden;
+        }
+
+        .font-cyber {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .font-royal {
+            font-family: 'Cinzel Decorative', serif;
+        }
+        .font-impact {
+            font-family: 'Teko', sans-serif;
+        }
+
+        /* Vibrant Glass Surfaces */
+        .neon-card {
+            background: linear-gradient(145deg, rgba(8, 28, 58, 0.92) 0%, rgba(11, 20, 42, 0.95) 55%, rgba(3, 7, 18, 0.98) 100%);
+            border: 1.5px solid rgba(0, 240, 255, 0.45);
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.75), inset 0 0 20px rgba(0, 240, 255, 0.12);
+        }
+        .neon-card:hover {
+            border-color: rgba(0, 240, 255, 0.85);
+            box-shadow: 0 12px 40px rgba(0, 240, 255, 0.35), inset 0 0 26px rgba(0, 240, 255, 0.22);
+        }
+
+        .neon-card-gold {
+            background: linear-gradient(145deg, rgba(35, 28, 12, 0.95) 0%, rgba(18, 22, 45, 0.98) 100%);
+            border: 1.8px solid rgba(255, 215, 0, 0.85);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.35), inset 0 0 22px rgba(255, 183, 3, 0.2);
+        }
+        .neon-card-gold:hover {
+            border-color: #FFF275;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.55), inset 0 0 30px rgba(0, 240, 255, 0.28);
+        }
+
+        /* Ultra Vibrant Shimmering Text */
+        .electric-shimmer {
+            background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 22%, #00F0FF 50%, #FF5400 78%, #FFFFFF 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 4.5s linear infinite;
+        }
+        @keyframes shineText {
+            to { background-position: 200% center; }
+        }
+
+        /* Ambient Stadium Rays */
+        .stadium-rays {
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                rgba(0, 240, 255, 0.22) 15deg,
+                transparent 30deg,
+                rgba(255, 215, 0, 0.2) 45deg,
+                transparent 60deg,
+                rgba(0, 240, 255, 0.22) 75deg,
+                transparent 90deg,
+                rgba(255, 84, 0, 0.18) 105deg,
+                transparent 120deg,
+                rgba(0, 240, 255, 0.22) 135deg,
+                transparent 150deg,
+                rgba(255, 215, 0, 0.2) 165deg,
+                transparent 180deg,
+                rgba(0, 240, 255, 0.22) 195deg,
+                transparent 210deg,
+                rgba(255, 84, 0, 0.18) 225deg,
+                transparent 240deg,
+                rgba(0, 240, 255, 0.22) 255deg,
+                transparent 270deg,
+                rgba(255, 215, 0, 0.2) 285deg,
+                transparent 300deg,
+                rgba(0, 240, 255, 0.22) 315deg,
+                transparent 330deg,
+                rgba(0, 240, 255, 0.22) 345deg,
+                transparent 360deg
+            );
+            animation: spinSlow 50s linear infinite;
+        }
+
+        .prabhavali-ring {
+            animation: spinSlow 18s linear infinite;
+        }
+        .chakra-spin {
+            animation: spinSlow 12s linear infinite;
+        }
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Flame Animation */
+        .master-flame {
+            transform-origin: 50% 100%;
+            animation: flameFlicker 1.8s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 10px #00F0FF) drop-shadow(0 0 20px #FFD700);
+        }
+        @keyframes flameFlicker {
+            0% { transform: scaleX(1) scaleY(1) rotate(-1deg); opacity: 0.95; }
+            50% { transform: scaleX(1.08) scaleY(0.92) rotate(-1.5deg); opacity: 0.9; }
+            100% { transform: scaleX(0.92) scaleY(1.08) rotate(1.5deg); opacity: 1; }
+        }
+
+        /* Hover Scale */
+        .team-logo-container img {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .team-logo-container:hover img {
+            transform: scale(1.2) rotate(4deg);
+            filter: drop-shadow(0 0 16px #00F0FF);
+        }
+
+        /* Active Navigation */
+        .active-tab {
+            background: linear-gradient(135deg, #00F0FF 0%, #0284C7 50%, #FFB703 100%);
+            color: #030712 !important;
+            font-weight: 800;
+            box-shadow: 0 0 26px rgba(0, 240, 255, 0.85);
+            border: 1.5px solid #FFFFFF;
+        }
+
+        .petal {
+            position: fixed;
+            top: -40px;
+            z-index: 60;
+            pointer-events: none;
+            animation: petalFall linear forwards;
+        }
+        @keyframes petalFall {
+            0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 1; }
+            50% { transform: translateY(50vh) rotate(180deg) translateX(30px); opacity: 0.9; }
+            100% { transform: translateY(105vh) rotate(360deg) translateX(-25px); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-28 relative selection:bg-cyan-400 selection:text-slate-950">
+
+    <!-- CANVAS PARTICLES -->
+    <canvas id="legend-canvas" class="fixed inset-0 pointer-events-none z-10"></canvas>
+
+    <!-- SACHIN CHANT EASTER EGG TOAST -->
+    <div id="divine-blessing-toast" class="fixed inset-0 z-50 pointer-events-none hidden items-center justify-center bg-black/85 backdrop-blur-xs transition-opacity duration-500">
+        <div class="text-center p-8 rounded-3xl neon-card-gold border-2 border-amber-300 shadow-[0_0_80px_rgba(0,240,255,0.9)] transform scale-100 animate-bounce">
+            <p class="font-impact text-6xl md:text-8xl text-amber-300 tracking-wider drop-shadow-[0_0_35px_rgba(255,215,0,0.95)]">SACHIN... SACHIN... 👏 👏 👏</p>
+            <p class="font-royal text-sm md:text-base text-cyan-200 tracking-[0.25em] uppercase mt-2">Season 10 • Master Blaster Tribute • 100 Centuries, One Legend</p>
+        </div>
+    </div>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="relative overflow-hidden bg-gradient-to-b from-[#0A2244] via-[#081830] to-[#030712] border-b-2 border-cyan-400/50 pt-5 pb-8 px-4 text-center z-20">
+        
+        <!-- Rotating Stadium Light Rays -->
+        <div class="stadium-rays absolute -top-48 left-1/2 -translate-x-1/2 w-[760px] h-[760px] rounded-full pointer-events-none opacity-65"></div>
+
+        <!-- TOP RIGHT-ALIGNED BLINKING OFFICIAL PORTAL BADGE -->
+        <div class="relative z-10 flex justify-end max-w-5xl mx-auto mb-3 px-1">
+            <span class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600/30 via-cyan-500/30 to-amber-500/30 border-2 border-cyan-400 rounded-full px-4 py-1 text-[11px] text-cyan-300 font-cyber tracking-wider font-extrabold shadow-[0_0_22px_rgba(0,240,255,0.55)] animate-pulse">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#00F0FF]"></span> SRC OFFICIAL PORTAL
+            </span>
+        </div>
+        
+        <!-- Tournament Official Logo inside Medallion Frame -->
+        <div class="relative z-10 flex flex-col items-center justify-center">
+            <div id="logo-temple-frame" onclick="handleLogoTap()" title="Tap 10 times for Iconic 'Sachin... Sachin...' Chant" class="relative w-30 h-30 md:w-36 md:h-36 flex items-center justify-center cursor-pointer select-none group">
+                <svg viewBox="0 0 200 200" class="prabhavali-ring absolute inset-0 w-full h-full pointer-events-none">
+                    <defs>
+                        <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00F0FF"/>
+                            <stop offset="50%" stop-color="#FFD700"/>
+                            <stop offset="100%" stop-color="#FF5400"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="92" fill="none" stroke="url(#neonGrad)" stroke-width="2.8" stroke-dasharray="6 4"/>
+                    <circle cx="100" cy="100" r="83" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="2 8"/>
+                    <g fill="#00F0FF" opacity="0.95">
+                        <polygon points="100,2 96,14 104,14"/><polygon points="100,198 96,186 104,186"/>
+                        <polygon points="2,100 14,96 14,104"/><polygon points="198,100 186,96 186,104"/>
+                        <polygon points="30,30 42,36 36,42"/><polygon points="170,30 158,36 164,42"/>
+                        <polygon points="30,170 42,164 36,158"/><polygon points="170,170 158,164 164,158"/>
+                    </g>
+                </svg>
+
+                <div class="w-24 h-24 md:w-28 md:h-28 rounded-full p-1 bg-gradient-to-tr from-cyan-400 via-amber-300 to-blue-600 shadow-[0_0_45px_rgba(0,240,255,0.85)] flex items-center justify-center">
+                    <div class="w-full h-full rounded-full bg-[#030712] border-2 border-amber-300 flex items-center justify-center overflow-hidden aspect-square">
+                        <img src="logo.png" alt="SRC Tournament Logo" class="w-full h-full object-cover drop-shadow-[0_0_12px_rgba(255,215,0,0.85)] group-hover:scale-105 transition-transform">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AMPLE BREATHING SPACE BELOW LOGO (NO OVERLAPPING) -->
+        <div class="relative z-10 mt-6 space-y-1.5">
+            <p class="font-impact text-3xl sm:text-4xl text-amber-300 tracking-wider drop-shadow-[0_2px_16px_rgba(0,240,255,0.85)] uppercase">
+                🏏 A Decade of Dominance • Season 10 🏏
+            </p>
+            <h1 id="tournament-main-title" 
+                onmousedown="startTitlePress()" onmouseup="cancelTitlePress()" onmouseleave="cancelTitlePress()"
+                ontouchstart="startTitlePress()" ontouchend="cancelTitlePress()"
+                title="Long-press for Golden & Cyan Confetti Shower"
+                class="font-royal font-cyber text-3xl sm:text-4xl md:text-5xl font-black tracking-wider uppercase electric-shimmer drop-shadow-[0_4px_22px_rgba(0,240,255,0.6)] cursor-pointer select-none">
+                SAMAL ROUT CUP
+            </h1>
+            <p class="font-royal text-xs sm:text-sm tracking-[0.28em] text-cyan-200 uppercase font-bold">
+                Tribute to Sachin Tendulkar • 100 Centuries, One Legend
+            </p>
+        </div>
+
+        <!-- Tournament Overview Badges (12 Overs • 3-Match Series • Max 2 Ov / Bowler) -->
+        <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-4xl mx-auto mt-7 text-xs md:text-sm font-semibold overflow-hidden">
+            <div class="neon-card rounded-xl p-3 flex items-center justify-start gap-3 relative overflow-hidden group">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/30 border border-cyan-400 flex items-center justify-center text-cyan-300 text-lg shrink-0 shadow-[0_0_16px_rgba(0,240,255,0.45)]">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-amber-300 uppercase leading-none font-cyber font-bold">Date & Day</p>
+                    <p class="text-white mt-0.5 font-bold">15/11/26 (Sunday)</p>
+                </div>
+            </div>
+
+            <div class="neon-card rounded-xl p-3 flex items-center justify-start gap-3 relative overflow-hidden">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/25 border border-amber-400 flex items-center justify-center text-amber-300 text-lg shrink-0 shadow-[0_0_16px_rgba(255,215,0,0.4)]">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-amber-300 uppercase leading-none font-cyber font-bold">Venue Ground</p>
+                    <p class="text-white mt-0.5 font-bold">L . Park</p>
+                </div>
+            </div>
+
+            <div class="neon-card rounded-xl p-3 flex items-center justify-start gap-3 relative overflow-hidden">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/25 border border-cyan-400 flex items-center justify-center text-cyan-300 shrink-0 shadow-[0_0_16px_rgba(0,240,255,0.45)]">
+                    <i class="fa-solid fa-baseball text-amber-300 text-lg"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-amber-300 uppercase leading-none font-cyber font-bold">Match Format</p>
+                    <p class="text-white mt-0.5 font-bold">T12 Format (Max 2 Ov/Bwlr)</p>
+                </div>
+            </div>
+
+            <div class="neon-card rounded-xl p-3 flex items-center justify-start gap-3 relative overflow-hidden">
+                <div class="w-10 h-10 rounded-lg bg-yellow-500/25 border border-yellow-400 flex items-center justify-center text-yellow-300 text-lg shrink-0 shadow-[0_0_16px_rgba(255,215,0,0.4)]">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-amber-300 uppercase leading-none font-cyber font-bold">Entry Fee</p>
+                    <p class="text-white mt-0.5 font-bold">₹20 (Per Player)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK ACTION PORTALS -->
+        <div class="relative z-10 mt-7 max-w-5xl mx-auto px-2">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="h-0.5 w-14 bg-gradient-to-r from-transparent via-cyan-400 to-cyan-300"></span>
+                <p class="font-cyber text-[10px] tracking-widest uppercase text-cyan-300 font-black">⚡ Season 10 Portals (Tap to Open) ⚡</p>
+                <span class="h-0.5 w-14 bg-gradient-to-l from-transparent via-cyan-400 to-cyan-300"></span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <a href="https://tiger-0824.github.io/src_history/" target="_blank" class="w-full inline-flex items-center justify-between bg-gradient-to-r from-[#034078] via-[#0284C7] to-[#D4AF37] border-2 border-cyan-300 border-b-4 border-slate-950 active:border-b active:translate-y-1 font-cyber font-bold text-[11px] tracking-wider uppercase text-white py-3 px-3.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-[0_0_24px_rgba(2,132,199,0.65)] hover:shadow-[0_0_35px_rgba(0,240,255,0.9)] group cursor-pointer">
+                    <div class="flex items-center gap-2 text-left">
+                        <i class="fa-solid fa-clock-rotate-left text-sm group-hover:-rotate-45 transition-transform text-amber-300"></i> 
+                        <span class="drop-shadow">History</span>
+                    </div>
+                    <span class="text-[9px] bg-black/60 border border-amber-300 text-amber-200 px-2 py-0.5 rounded font-black tracking-wider uppercase">Explore ↗</span>
+                </a>
+
+                <a href="https://tiger-0824.github.io/src_auction/" target="_blank" class="w-full inline-flex items-center justify-between bg-gradient-to-r from-[#C2410C] via-[#F59E0B] to-[#0284C7] border-2 border-amber-300 border-b-4 border-slate-950 active:border-b active:translate-y-1 font-cyber font-bold text-[11px] tracking-wider uppercase text-white py-3 px-3.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-[0_0_24px_rgba(245,158,11,0.6)] hover:shadow-[0_0_38px_rgba(255,215,0,0.9)] group cursor-pointer">
+                    <div class="flex items-center gap-2 text-left">
+                        <i class="fa-solid fa-gavel text-sm group-hover:-rotate-12 transition-transform text-amber-100"></i> 
+                        <span class="drop-shadow">Auction Hub</span>
+                    </div>
+                    <span class="text-[9px] bg-black/60 border border-amber-200 text-amber-100 px-2 py-0.5 rounded font-black tracking-wider uppercase">Enter 🔨</span>
+                </a>
+
+                <a href="https://tiger-0824.github.io/src_gallery/" target="_blank" class="w-full inline-flex items-center justify-between bg-gradient-to-r from-[#0A2244] via-[#0E3B66] to-[#00F0FF] border-2 border-cyan-400 border-b-4 border-slate-950 active:border-b active:translate-y-1 font-cyber font-bold text-[11px] tracking-wider uppercase text-white py-3 px-3.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-[0_0_24px_rgba(0,240,255,0.5)] hover:shadow-[0_0_38px_rgba(0,240,255,0.85)] group cursor-pointer">
+                    <div class="flex items-center gap-2 text-left">
+                        <i class="fa-solid fa-photo-film text-sm group-hover:scale-110 transition-transform text-cyan-300"></i> 
+                        <span class="drop-shadow">Media Gallery</span>
+                    </div>
+                    <span class="text-[9px] bg-black/60 border border-cyan-300 text-cyan-200 px-2 py-0.5 rounded font-black tracking-wider uppercase">View ↗</span>
+                </a>
+
+                <a href="https://tiger-0824.github.io/SRC_rulebook/" target="_blank" class="w-full inline-flex items-center justify-between bg-gradient-to-r from-[#991B1B] via-[#EA580C] to-[#0284C7] border-2 border-amber-300 border-b-4 border-slate-950 active:border-b active:translate-y-1 font-cyber font-bold text-[11px] tracking-wider uppercase text-white py-3 px-3.5 rounded-xl transition-all duration-200 hover:scale-[1.03] shadow-[0_0_24px_rgba(234,88,12,0.6)] hover:shadow-[0_0_38px_rgba(255,84,0,0.85)] group cursor-pointer">
+                    <div class="flex items-center gap-2 text-left">
+                        <i class="fa-solid fa-book-open text-sm group-hover:scale-110 transition-transform text-amber-300"></i> 
+                        <span class="drop-shadow">Rulebook</span>
+                    </div>
+                    <span class="text-[9px] bg-black/60 border border-amber-300 text-amber-200 px-2 py-0.5 rounded font-black tracking-wider uppercase">Read ↗</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- POSTER & FLYER SHOWCASE CARD -->
+        <div class="relative z-10 mt-7 max-w-5xl mx-auto px-2">
+            <div onclick="openPosterModal()" class="group relative neon-card-gold rounded-2xl p-4 sm:p-5 cursor-pointer overflow-hidden border-2 border-amber-400 shadow-[0_0_40px_rgba(0,240,255,0.4)] hover:shadow-[0_0_60px_rgba(255,215,0,0.75)] transition-all duration-300 hover:-translate-y-1">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-300/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
+                    <div class="relative shrink-0 w-full md:w-48 h-40 md:h-44 rounded-xl overflow-hidden bg-black/90 border-2 border-cyan-400 p-1 shadow-[0_0_28px_rgba(0,240,255,0.5)] group-hover:border-amber-300 transition-colors">
+                        <img src="banner.png" alt="SRC Season 10 Tournament Poster" class="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end justify-center pb-2.5">
+                            <span class="bg-gradient-to-r from-cyan-400 to-amber-400 text-slate-950 font-cyber font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-[0_0_16px_rgba(0,240,255,0.85)] flex items-center gap-1.5 group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-expand text-[9px]"></i> Preview Poster
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left space-y-2.5">
+                        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600/45 via-cyan-500/35 to-amber-500/35 border border-cyan-400 rounded-full px-4 py-1 shadow-inner">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                            <span class="font-cyber text-[10px] tracking-widest uppercase font-extrabold text-cyan-200">
+                                📜 Season 10 Official Manifesto & Flyer
+                            </span>
+                        </div>
+
+                        <h3 class="font-royal text-xl sm:text-2xl font-black text-white group-hover:text-amber-300 transition-colors tracking-wide leading-tight">
+                            TOURNAMENT OFFICIAL POSTER & TRIBUTE FLYER
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-cyan-100 font-medium leading-relaxed max-w-xl">
+                            Explore the high-resolution tournament manifesto, 3-match T12 series schedule, captain protocols, and festival guidelines in full lightbox view.
+                        </p>
+
+                        <div class="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                            <span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 via-amber-400 to-yellow-400 text-slate-950 font-cyber font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-[0_0_28px_rgba(0,240,255,0.7)] group-hover:shadow-[0_0_45px_rgba(255,215,0,1)] group-hover:scale-105 active:scale-95 transition-all">
+                                <i class="fa-solid fa-scroll text-sm"></i>
+                                <span>Unfold Full Resolution Poster</span>
+                                <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                            <span class="text-[11px] font-cyber text-amber-300 font-bold flex items-center gap-1.5">
+                                <i class="fa-solid fa-certificate text-cyan-400"></i> Full HD 4K View
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SACHIN TENDULKAR TRIBUTE BANNER -->
+    <section class="max-w-5xl mx-auto px-4 mt-6 relative z-20">
+        <div onclick="launchCelebrationFireworks()" title="Tap to launch Master Blaster fireworks!" class="neon-card-gold rounded-2xl p-4 sm:px-6 flex items-center justify-between gap-3 cursor-pointer hover:border-cyan-300 transition-all">
+            <div class="shrink-0 flex flex-col items-center">
+                <span class="font-impact text-4xl sm:text-5xl text-amber-300 font-bold leading-none">10</span>
+                <span class="text-[9px] font-cyber text-cyan-300 font-bold tracking-widest">MASTER</span>
+            </div>
+            <div class="text-center">
+                <p class="font-impact text-2xl sm:text-3xl text-amber-300 tracking-wider uppercase leading-snug">
+                    ✨ "There are heroes, there are legends, and then there is Sachin Ramesh Tendulkar" ✨
+                </p>
+                <p class="text-xs sm:text-sm text-cyan-100 font-medium mt-0.5 leading-relaxed">
+                    Celebrating a landmark 10th season of the Samal Rout Cup in tribute to the God of Cricket.
+                </p>
+            </div>
+            <div class="shrink-0 flex flex-col items-center">
+                <span class="font-impact text-4xl sm:text-5xl text-amber-300 font-bold leading-none">10</span>
+                <span class="text-[9px] font-cyber text-cyan-300 font-bold tracking-widest">LEGEND</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIZE POOL & ORGANIZERS SUMMARY BAR -->
+    <section class="max-w-6xl mx-auto px-4 mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 relative z-20">
+        <div class="md:col-span-2 neon-card rounded-2xl p-4 flex flex-col justify-between">
+            <h3 class="font-cyber text-xs tracking-wider text-amber-300 uppercase mb-3 flex items-center gap-2 font-bold">
+                <i class="fa-solid fa-trophy text-amber-400"></i> Season 10 Champions Rewards (Winners Only)
+            </h3>
+            <div class="bg-gradient-to-r from-blue-600/25 via-amber-500/20 to-transparent border border-cyan-400/50 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/30 border border-amber-400 flex items-center justify-center text-amber-300 text-2xl shrink-0 shadow-[0_0_20px_rgba(255,215,0,0.4)]">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <div>
+                        <p class="text-[11px] uppercase tracking-wider text-amber-400 font-cyber font-extrabold">Double Cash Prize Bounty</p>
+                        <p class="text-base sm:text-lg font-black text-white mt-0.5">2X Your Entry Back</p>
+                        <p class="text-xs text-cyan-200">Exclusive winning payout awarded only to the championship roster</p>
+                    </div>
+                </div>
+                <div class="bg-[#091E3A] border-2 border-cyan-400 px-5 py-2 rounded-xl font-cyber text-center shrink-0 shadow-lg">
+                    <span class="text-[10px] text-amber-300 uppercase tracking-wider block font-bold">Winner Reward</span>
+                    <span class="text-xl font-black text-amber-300">₹40 / Player</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="neon-card rounded-2xl p-4">
+            <h3 class="font-cyber text-xs tracking-wider text-amber-300 uppercase mb-2.5 flex items-center gap-2 font-bold">
+                <i class="fa-solid fa-phone text-cyan-400"></i> Organiser's Contact
+            </h3>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-black/50 border border-cyan-500/40 rounded-xl p-2 flex items-center gap-2">
+                    <i class="fa-solid fa-user text-cyan-400"></i>
+                    <div><p class="font-bold text-white">Lala</p><p class="text-[10px] font-mono text-cyan-200">+91 94379 42900</p></div>
+                </div>
+                <div class="bg-black/50 border border-cyan-500/40 rounded-xl p-2 flex items-center gap-2">
+                    <i class="fa-solid fa-user text-cyan-400"></i>
+                    <div><p class="font-bold text-white">Asmit</p><p class="text-[10px] font-mono text-cyan-200">+91 87631 24083</p></div>
+                </div>
+                <div class="bg-black/50 border border-cyan-500/40 rounded-xl p-2 flex items-center gap-2">
+                    <i class="fa-solid fa-user text-cyan-400"></i>
+                    <div><p class="font-bold text-white">Subu</p><p class="text-[10px] font-mono text-cyan-200">+91 63703 47515</p></div>
+                </div>
+                <div class="bg-black/50 border border-cyan-500/40 rounded-xl p-2 flex items-center gap-2">
+                    <i class="fa-solid fa-user text-cyan-400"></i>
+                    <div><p class="font-bold text-white">Rishu</p><p class="text-[10px] font-mono text-cyan-200">+91 70083 37962</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOLD & CYAN CRICKET EMBLEM DIVIDER -->
+    <div class="max-w-4xl mx-auto px-4 my-7 flex items-center justify-center gap-3 opacity-95 relative z-20 select-none">
+        <span class="h-0.5 flex-1 bg-gradient-to-r from-transparent via-cyan-400 to-amber-400"></span>
+        <div class="flex items-center gap-2 text-amber-300 font-impact text-2xl">
+            <span>🏏</span>
+            <span class="font-cyber text-sm tracking-widest text-cyan-300 font-extrabold">#10</span>
+            <span>🏏</span>
+        </div>
+        <span class="h-0.5 flex-1 bg-gradient-to-l from-transparent via-cyan-400 to-amber-400"></span>
+    </div>
+
+    <!-- MAIN DYNAMIC SECTIONS CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 relative z-20">
+        
+        <!-- SECTION 1: MATCHUP HUB & 3-MATCH T12 SERIES BRACKETS -->
+        <div id="fixtures-section" class="tab-content space-y-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="flex items-center justify-between border-l-4 border-amber-400 pl-3">
+                        <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-amber-300">
+                            Season 10 Matchup Center
+                        </h2>
+                    </div>
+
+                    <!-- HEAD-TO-HEAD VS CARD -->
+                    <div class="neon-card-gold rounded-2xl p-4 sm:p-5 relative overflow-hidden">
+                        <div class="flex items-center justify-between border-b border-amber-500/40 pb-2.5 mb-4">
+                            <span class="font-cyber text-[11px] tracking-wider text-amber-300 font-bold uppercase flex items-center gap-2">
+                                <span class="relative flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400"></span>
+                                </span>
+                                Season 10 • 3-Match T12 Bilateral Series
+                            </span>
+                            <span class="text-[10px] bg-blue-500/30 text-cyan-200 px-3 py-0.5 rounded border border-cyan-400 font-cyber font-bold">
+                                15/11/26 (Sunday)
+                            </span>
+                        </div>
+                        
+                        <!-- 3-Column Head-to-Head Alignment -->
+                        <div class="bg-[#030712]/95 border-2 border-amber-400/50 rounded-xl p-4 grid grid-cols-5 items-center gap-2 relative shadow-inner">
+                            <!-- Team 1 Side -->
+                            <div class="col-span-2 flex flex-col items-center sm:items-end text-center sm:text-right overflow-hidden">
+                                <div class="w-13 h-13 rounded-xl bg-[#091E3A] border-2 border-cyan-400 p-1.5 mb-2 shadow-lg flex items-center justify-center shrink-0">
+                                    <img src="1.png" alt="Team 1 Logo" class="w-full h-full object-contain">
+                                </div>
+                                <p class="text-sm sm:text-base font-cyber font-black text-white leading-tight truncate w-full">Team 1 (TBD)</p>
+                                <p class="text-[10px] text-cyan-200 font-semibold mt-0.5"><i class="fa-solid fa-crown text-amber-400 mr-1 text-[9px]"></i>Capt: TBD • Vice: TBD</p>
+                            </div>
+
+                            <!-- Centered Chakra VS Divider (with T12 under) -->
+                            <div class="col-span-1 flex flex-col items-center justify-center shrink-0">
+                                <div class="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
+                                    <svg viewBox="0 0 100 100" class="chakra-spin absolute inset-0 w-full h-full">
+                                        <circle cx="50" cy="50" r="44" fill="none" stroke="#FFD700" stroke-width="2.5" stroke-dasharray="4 3"/>
+                                        <circle cx="50" cy="50" r="36" fill="none" stroke="#00F0FF" stroke-width="2"/>
+                                        <g fill="#00F0FF">
+                                            <circle cx="50" cy="4" r="3.5"/><circle cx="50" cy="96" r="3.5"/>
+                                            <circle cx="4" cy="50" r="3.5"/><circle cx="96" cy="50" r="3.5"/>
+                                        </g>
+                                    </svg>
+                                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#0284C7] to-[#0A2244] border-2 border-amber-300 flex items-center justify-center shadow-[0_0_24px_rgba(0,240,255,0.85)]">
+                                        <span class="font-cyber font-black text-xs text-white">VS</span>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-cyber text-amber-400 uppercase mt-1 tracking-wider font-extrabold">T12</span>
+                            </div>
+
+                            <!-- Team 2 Side -->
+                            <div class="col-span-2 flex flex-col items-center sm:items-start text-center sm:text-left overflow-hidden">
+                                <div class="w-13 h-13 rounded-xl bg-[#091E3A] border-2 border-cyan-400 p-1.5 mb-2 shadow-lg flex items-center justify-center shrink-0">
+                                    <img src="2.png" alt="Team 2 Logo" class="w-full h-full object-contain">
+                                </div>
+                                <p class="text-sm sm:text-base font-cyber font-black text-white leading-tight truncate w-full">Team 2 (TBD)</p>
+                                <p class="text-[10px] text-cyan-200 font-semibold mt-0.5"><i class="fa-solid fa-crown text-amber-400 mr-1 text-[9px]"></i>Capt: TBD • Vice: TBD</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3-MATCH T12 SERIES SCHEDULE BRACKET (EXACT FORMAT MATCHING YOUR DESIGN) -->
+                    <div class="neon-card rounded-2xl p-4 sm:p-5 space-y-3.5 shadow-xl border-2 border-amber-400/60">
+                        <div class="flex items-center justify-between border-b border-amber-500/40 pb-2.5">
+                            <h3 class="font-cyber text-xs sm:text-sm tracking-wider uppercase text-amber-300 font-extrabold flex items-center gap-2">
+                                <i class="fa-solid fa-list-check text-cyan-400 text-sm"></i> 
+                                <span>SEASON 10 • 3-MATCH T12 SERIES SCHEDULE</span>
+                            </h3>
+                            <span class="text-[10px] font-cyber text-amber-300 bg-amber-500/25 border border-amber-400/60 px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                                Back-To-Back Fixtures
+                            </span>
+                        </div>
+
+                        <!-- Match 1 -->
+                        <div class="bg-black/60 border border-cyan-400/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between gap-3 shadow-md hover:border-cyan-300 transition-colors">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-9 h-9 rounded-lg bg-blue-600/35 border-2 border-cyan-400 font-cyber font-black text-xs text-cyan-300 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(0,240,255,0.5)]">
+                                    M1
+                                </div>
+                                <div class="truncate">
+                                    <p class="font-bold text-xs sm:text-sm text-white">Match 1 • 15/11/26 (Sunday)</p>
+                                    <p class="text-[11px] text-cyan-200 truncate">Team 1 vs Team 2 (1st T12 Match)</p>
+                                </div>
+                            </div>
+                            <span class="font-cyber text-[10px] bg-gradient-to-r from-blue-600/40 to-cyan-500/40 text-cyan-300 border border-cyan-400 px-3 py-1 rounded-lg font-black uppercase tracking-wider shrink-0 shadow-md">
+                                SCHEDULED ⏳
+                            </span>
+                        </div>
+
+                        <!-- Match 2 -->
+                        <div class="bg-black/60 border border-amber-400/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between gap-3 shadow-md hover:border-amber-300 transition-colors">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-9 h-9 rounded-lg bg-amber-600/35 border-2 border-amber-400 font-cyber font-black text-xs text-amber-300 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(255,215,0,0.5)]">
+                                    M2
+                                </div>
+                                <div class="truncate">
+                                    <p class="font-bold text-xs sm:text-sm text-white">Match 2 • 15/11/26 (Sunday)</p>
+                                    <p class="text-[11px] text-amber-200 truncate">Team 1 vs Team 2 (Played After M1)</p>
+                                </div>
+                            </div>
+                            <span class="font-cyber text-[10px] bg-gradient-to-r from-amber-600/40 to-yellow-500/40 text-amber-300 border border-amber-400 px-3 py-1 rounded-lg font-black uppercase tracking-wider shrink-0 shadow-md">
+                                BACK-TO-BACK ⏳
+                            </span>
+                        </div>
+
+                        <!-- Match 3 -->
+                        <div class="bg-black/60 border border-orange-500/70 rounded-xl p-3 sm:p-3.5 flex items-center justify-between gap-3 shadow-md hover:border-orange-400 transition-colors">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-9 h-9 rounded-lg bg-orange-600/35 border-2 border-orange-400 font-cyber font-black text-xs text-orange-300 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(255,84,0,0.5)]">
+                                    M3
+                                </div>
+                                <div class="truncate">
+                                    <p class="font-bold text-xs sm:text-sm text-white">Match 3 • 15/11/26 (Sunday)</p>
+                                    <p class="text-[11px] text-amber-200 truncate">Team 1 vs Team 2 (Series Finale)</p>
+                                </div>
+                            </div>
+                            <span class="font-cyber text-[10px] bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black uppercase tracking-wider px-3 py-1 rounded-lg shrink-0 shadow-[0_0_20px_rgba(255,183,3,0.85)]">
+                                SERIES DECIDER 🏆
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- TOURNAMENT CHAMPIONS BOX -->
+                    <div class="bg-gradient-to-r from-[#0C2A4A] via-[#081830] to-[#0C2A4A] border-2 border-amber-400 rounded-2xl p-6 text-center relative overflow-hidden shadow-[0_0_45px_rgba(255,215,0,0.35)]">
+                        <div class="absolute -top-6 -right-6 w-24 h-12 bg-cyan-500/25 rounded-full blur-2xl"></div>
+                        <p class="font-cyber text-[11px] tracking-widest text-amber-400 uppercase font-bold mb-1">
+                            SEASON 10 OFFICIAL CROWN • AWAITING VICTOR
+                        </p>
+                        <p class="font-royal font-cyber text-base md:text-xl tracking-widest text-amber-300 font-black uppercase mb-4 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-trophy text-amber-400"></i> 
+                            <span>TOURNAMENT CHAMPIONS</span> 
+                            <i class="fa-solid fa-trophy text-amber-400"></i>
+                        </p>
+                        <div class="flex items-center justify-center max-w-sm mx-auto">
+                            <div class="w-full font-cyber font-black text-2xl sm:text-3xl text-amber-300 tracking-[0.2em] uppercase bg-black/70 border-2 border-dashed border-amber-400/80 rounded-xl py-3.5 px-6 shadow-[inset_0_0_25px_rgba(255,215,0,0.3)] flex items-center justify-center gap-3">
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                                <span class="electric-shimmer font-black">TBD</span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-cyan-200 font-cyber mt-3">
+                            Team 1 vs Team 2 • 3-Match T12 Series Decider on 15/11/26
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STANDINGS TABLE -->
+                <div class="space-y-4">
+                    <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-orange-400 border-l-4 border-orange-500 pl-3">
+                        Season 10 Standings Table
+                    </h2>
+                    
+                    <div class="bg-blue-600/20 border-2 border-cyan-400/50 rounded-xl p-3 text-xs text-cyan-100 leading-relaxed shadow-md">
+                        <strong class="text-cyan-300 font-cyber block mb-1 uppercase"><i class="fa-solid fa-circle-info mr-1"></i> Standings Log:</strong>
+                        Official wins, losses, points, and net run rates for the 3-match T12 series will update live as matches conclude.
+                    </div>
+
+                    <div class="neon-card rounded-2xl overflow-hidden shadow-xl border-2 border-cyan-400/50">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs border-collapse min-w-[280px]">
+                                <thead>
+                                    <tr class="bg-black/80 border-b-2 border-cyan-400/50 font-cyber text-[10px] tracking-wider text-cyan-300 uppercase">
+                                        <th class="p-3 text-center">#</th>
+                                        <th class="p-3">Team Name</th>
+                                        <th class="p-3 text-center">W</th>
+                                        <th class="p-3 text-center">L</th>
+                                        <th class="p-3 text-center">Pts</th>
+                                        <th class="p-3 text-right">NRR</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-cyan-500/20 font-semibold text-white">
+                                    <tr class="hover:bg-cyan-500/15 transition-colors">
+                                        <td class="p-3 text-center text-cyan-400 font-cyber font-bold">1</td>
+                                        <td class="p-3 font-bold text-white">Team 1 (TBD)</td>
+                                        <td class="p-3 text-center text-cyan-200">0</td>
+                                        <td class="p-3 text-center text-cyan-200">0</td>
+                                        <td class="p-3 text-center text-amber-300 font-black">0</td>
+                                        <td class="p-3 text-right font-mono text-cyan-200">0.000</td>
+                                    </tr>
+                                    <tr class="hover:bg-cyan-500/15 transition-colors">
+                                        <td class="p-3 text-center text-cyan-400 font-cyber font-bold">2</td>
+                                        <td class="p-3 font-bold text-white">Team 2 (TBD)</td>
+                                        <td class="p-3 text-center text-cyan-200">0</td>
+                                        <td class="p-3 text-center text-cyan-200">0</td>
+                                        <td class="p-3 text-center text-amber-300 font-black">0</td>
+                                        <td class="p-3 text-right font-mono text-cyan-200">0.000</td>
+                                    </tr>
+                                    <tr class="hover:bg-cyan-500/15 transition-colors">
+                                        <td class="p-3 text-center text-cyan-400/60 font-cyber">3</td>
+                                        <td class="p-3 font-bold text-gray-300">Team 3 (Dormant)</td>
+                                        <td class="p-3 text-center text-gray-400">0</td>
+                                        <td class="p-3 text-center text-gray-400">0</td>
+                                        <td class="p-3 text-center text-gray-300 font-bold">0</td>
+                                        <td class="p-3 text-right font-mono text-gray-400">0.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: THE SQUADS (ALL RESET TO TBD) -->
+        <div id="teams-section" class="tab-content hidden space-y-6">
+            <div class="flex items-center justify-between border-l-4 border-amber-400 pl-3">
+                <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-amber-300">
+                    Season 10 Participating Squads
+                </h2>
+                <span class="text-xs bg-blue-600/30 border border-cyan-400 px-3 py-1 rounded-full text-cyan-300 font-cyber font-bold">
+                    T12 Rosters
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Team 1: TBD -->
+                <div class="neon-card rounded-2xl p-4 shadow-lg border-2 border-cyan-400">
+                    <div class="flex items-center gap-4 border-b border-cyan-500/40 pb-3 mb-3">
+                        <div class="team-logo-container w-14 h-14 bg-[#030712] border-2 border-cyan-400 rounded-xl flex items-center justify-center p-1 overflow-hidden shrink-0 shadow-md">
+                            <img src="1.png" alt="Team 1 Logo" class="w-full h-full object-contain rounded">
+                        </div>
+                        <div>
+                            <h3 class="font-cyber font-bold text-lg text-white">Team 1 (TBD)</h3>
+                            <span class="text-[10px] tracking-wider font-cyber font-bold uppercase bg-blue-600/25 text-cyan-300 px-2 py-0.5 rounded border border-cyan-400">Active Squad</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-1.5 text-xs font-semibold">
+                        <li class="bg-gradient-to-r from-amber-500/30 to-transparent border border-amber-400 px-2.5 py-1.5 rounded-lg flex items-center justify-between shadow-sm">
+                            <span class="text-amber-200 font-bold"><i class="fa-solid fa-crown mr-1.5 text-amber-400"></i> 1. TBD</span>
+                            <span class="font-cyber text-[9px] bg-amber-500/40 text-amber-300 px-1.5 py-0.2 rounded font-black uppercase">Captain</span>
+                        </li>
+                        <li class="bg-gradient-to-r from-cyan-500/25 to-transparent border border-cyan-300 text-cyan-200 px-2.5 py-1.5 rounded-lg flex justify-between items-center shadow-sm">
+                            <span class="text-white font-bold"><i class="fa-solid fa-gem mr-1.5 text-cyan-300"></i> 2. TBD</span>
+                            <span class="font-cyber text-[9px] bg-cyan-300/30 text-cyan-200 px-1.5 py-0.5 rounded border border-cyan-300 font-black uppercase tracking-wider">Vice - Captain</span>
+                        </li>
+                        <li class="text-center text-[10px] text-cyan-400 py-0.5">─── 🏏 ───</li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>3. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>4. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>5. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>6. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>7. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>8. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-cyan-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>9. TBD</span><span class="text-cyan-400 text-[10px]">Player</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>10. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>11. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>12. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Team 2: TBD -->
+                <div class="neon-card rounded-2xl p-4 shadow-lg border-2 border-amber-400">
+                    <div class="flex items-center gap-4 border-b border-amber-500/40 pb-3 mb-3">
+                        <div class="team-logo-container w-14 h-14 bg-[#030712] border-2 border-amber-400 rounded-xl flex items-center justify-center p-1 overflow-hidden shrink-0 shadow-md">
+                            <img src="2.png" alt="Team 2 Logo" class="w-full h-full object-contain rounded">
+                        </div>
+                        <div>
+                            <h3 class="font-cyber font-bold text-lg text-white">Team 2 (TBD)</h3>
+                            <span class="text-[10px] tracking-wider font-cyber font-bold uppercase bg-amber-500/25 text-amber-300 px-2 py-0.5 rounded border border-amber-400">Active Squad</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-1.5 text-xs font-semibold">
+                        <li class="bg-gradient-to-r from-amber-500/30 to-transparent border border-amber-400 px-2.5 py-1.5 rounded-lg flex items-center justify-between shadow-sm">
+                            <span class="text-amber-200 font-bold"><i class="fa-solid fa-crown mr-1.5 text-amber-400"></i> 1. TBD</span>
+                            <span class="font-cyber text-[9px] bg-amber-500/40 text-amber-300 px-1.5 py-0.2 rounded font-black uppercase">Captain</span>
+                        </li>
+                        <li class="bg-gradient-to-r from-cyan-500/25 to-transparent border border-cyan-300 text-cyan-200 px-2.5 py-1.5 rounded-lg flex justify-between items-center shadow-sm">
+                            <span class="text-white font-bold"><i class="fa-solid fa-gem mr-1.5 text-cyan-300"></i> 2. TBD</span>
+                            <span class="font-cyber text-[9px] bg-cyan-300/30 text-cyan-200 px-1.5 py-0.5 rounded border border-cyan-300 font-black uppercase tracking-wider">Vice - Captain</span>
+                        </li>
+                        <li class="text-center text-[10px] text-amber-400 py-0.5">─── 🏏 ───</li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>3. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>4. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>5. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>6. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>7. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>8. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/50 border border-amber-500/30 text-white px-2.5 py-1.5 rounded-lg flex justify-between"><span>9. TBD</span><span class="text-amber-300 text-[10px]">Player</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>10. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>11. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>12. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Team 3: TBD (Dormant Squad) -->
+                <div class="neon-card rounded-2xl p-4 shadow-lg opacity-80 hover:opacity-100 border border-slate-700">
+                    <div class="flex items-center gap-4 border-b border-cyan-500/30 pb-3 mb-3">
+                        <div class="team-logo-container w-14 h-14 bg-[#030712] border border-cyan-400/50 rounded-xl flex items-center justify-center p-1 overflow-hidden shrink-0">
+                            <img src="3.png" alt="Team 3 Logo" class="w-full h-full object-contain rounded">
+                        </div>
+                        <div>
+                            <h3 class="font-cyber font-bold text-lg text-white">Team 3 (TBD)</h3>
+                            <span class="text-[10px] tracking-wider font-cyber font-bold uppercase bg-slate-800 text-cyan-200 px-2 py-0.5 rounded border border-cyan-500/30">Dormant Team</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-1.5 text-xs font-semibold">
+                        <li class="bg-gradient-to-r from-amber-500/20 to-transparent border border-amber-500/40 px-2.5 py-1.5 rounded-lg flex items-center justify-between">
+                            <span class="text-amber-300"><i class="fa-solid fa-crown mr-1.5 text-amber-400"></i> 1. TBD</span>
+                            <span class="font-cyber text-[9px] bg-amber-500/30 text-amber-300 px-1.5 py-0.2 rounded font-bold uppercase">Captain</span>
+                        </li>
+                        <li class="bg-gradient-to-r from-cyan-500/20 to-transparent border border-cyan-300/40 text-cyan-300 px-2.5 py-1.5 rounded-lg flex justify-between items-center shadow-sm">
+                            <span><i class="fa-solid fa-gem mr-1.5 text-cyan-300"></i> 2. TBD</span>
+                            <span class="font-cyber text-[9px] bg-cyan-300/30 text-cyan-200 px-1.5 py-0.5 rounded border border-cyan-300/40 font-black uppercase tracking-wider">Vice - Captain</span>
+                        </li>
+                        <li class="text-center text-[10px] text-cyan-400/60 py-0.5">─── 🏏 ───</li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>3. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>4. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>5. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>6. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>7. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>8. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/40 border border-cyan-500/20 text-gray-300 px-2.5 py-1.5 rounded-lg flex justify-between"><span>9. TBD</span><span class="text-cyan-400/70 text-[10px]">Player</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>10. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>11. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                        <li class="bg-black/30 border border-slate-800 text-gray-500 px-2.5 py-1 rounded-lg flex justify-between"><span>12. N.A.</span><span class="font-cyber text-[9px] text-gray-500">N.A.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: 34 PLAYER MASTER REGISTRY (ALL RESET TO TBD) -->
+        <div id="registry-section" class="tab-content hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-l-4 border-amber-400 pl-3">
+                <div>
+                    <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-amber-300">
+                        Official Tournament Registry (Season 10)
+                    </h2>
+                    <p class="text-xs text-cyan-200">Registration matrix open across all 34 player registry slots</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="font-cyber text-xs bg-amber-500/25 border-2 border-amber-400 px-3.5 py-1 rounded-full text-amber-300 font-extrabold shadow-md">
+                        Total Slots: 34
+                    </span>
+                </div>
+            </div>
+
+            <!-- Modern 34-Player Matrix Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <script>
+                    let registryHTML = '';
+                    for (let p = 1; p <= 34; p++) {
+                        const numStr = p < 10 ? '0' + p : p;
+                        registryHTML += `
+                        <div class="neon-card rounded-xl p-2.5 flex items-center gap-2.5 shadow-md border-cyan-400/40 hover:border-cyan-300 transition-colors">
+                            <div class="w-8 h-8 bg-blue-600/30 border-2 border-cyan-400 font-cyber font-black text-xs text-cyan-300 rounded-lg flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(0,240,255,0.4)]">
+                                ${numStr}
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="font-bold text-sm text-white tracking-wide truncate">TBD</p>
+                                <p class="text-[9px] uppercase text-cyan-400 font-extrabold tracking-wider font-cyber flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Registered
+                                </p>
+                            </div>
+                        </div>`;
+                    }
+                    document.write(registryHTML);
+                </script>
+            </div>
+        </div>
+
+        <!-- SECTION 4: HALL OF GLORY (HONORS CENTER) -->
+        <div id="stats-section" class="tab-content hidden space-y-8 relative">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-l-4 border-amber-400 pl-3">
+                <div>
+                    <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-amber-300">
+                        The Master Blaster Hall of Glory • Season 10
+                    </h2>
+                    <p class="text-xs text-cyan-200">Season 10 player honors ready • Activates with live matches on 15/11/26</p>
+                </div>
+                <span class="text-xs bg-amber-500/25 border-2 border-amber-400 px-3.5 py-1 rounded-full text-amber-300 font-cyber font-extrabold shrink-0 self-start sm:self-auto shadow-md">
+                    🏏 Season 10 Board: TBD
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Batting Winner: Orange Cap -->
+                <div class="neon-card rounded-2xl p-4 relative overflow-hidden border-2 border-orange-500/60">
+                    <div class="absolute top-0 right-0 bg-orange-500/30 text-orange-200 font-cyber text-[9px] tracking-widest font-black px-3 py-1 uppercase rounded-bl-xl border-l border-b border-orange-400">
+                        Master Blaster Trophy • Orange Cap
+                    </div>
+                    <div class="flex items-center justify-between mb-3 mt-2">
+                        <h3 class="font-cyber font-bold text-sm text-orange-400 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-amber-400"></i> Batting Leaderboard
+                        </h3>
+                        <div class="w-36 sm:w-40 grid grid-cols-3 text-right text-[10px] font-cyber text-amber-300 uppercase font-extrabold shrink-0">
+                            <span>M</span>
+                            <span>Avg</span>
+                            <span class="text-orange-400">Runs</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs">
+                        <script>
+                            for(let i=1; i<=5; i++) {
+                                document.write(`
+                                <div class="bg-black/60 border border-amber-500/30 rounded-xl p-2.5 flex items-center justify-between font-semibold">
+                                    <div class="flex items-center gap-2 truncate pr-2">
+                                        <span class="font-cyber text-amber-400 font-bold shrink-0">#${i}</span>
+                                        <span class="truncate text-white">TBD <span class="text-[10px] text-gray-400 font-normal">(Team ${i <= 2 ? i : 'TBD'})</span></span>
+                                    </div>
+                                    <div class="w-36 sm:w-40 grid grid-cols-3 text-right font-mono text-[11px] shrink-0 text-gray-300">
+                                        <span>0</span><span>0.0</span><span class="text-orange-400 font-bold">0</span>
+                                    </div>
+                                </div>`);
+                            }
+                        </script>
+                    </div>
+                    <p class="text-[10px] text-cyan-200 mt-2.5 italic font-sans leading-tight">
+                        * Season 10 leaderboard will dynamically log runs, strike rates, and boundaries starting 15/11/26.
+                    </p>
+                </div>
+
+                <!-- Bowling Winner: Purple Cap -->
+                <div class="neon-card rounded-2xl p-4 relative overflow-hidden border-2 border-cyan-400/60">
+                    <div class="absolute top-0 right-0 bg-blue-600/30 text-cyan-200 font-cyber text-[9px] tracking-widest font-black px-3 py-1 uppercase rounded-bl-xl border-l border-b border-cyan-400">
+                        Astra Trophy • Purple Cap
+                    </div>
+                    <div class="flex items-center justify-between mb-3 mt-2">
+                        <h3 class="font-cyber font-bold text-sm text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-amber-400"></i> Bowling Leaderboard
+                        </h3>
+                        <div class="w-40 sm:w-44 grid grid-cols-3 text-right text-[10px] font-cyber text-amber-300 uppercase font-extrabold shrink-0">
+                            <span>M</span>
+                            <span>Econ</span>
+                            <span class="text-cyan-300">Wkts</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs">
+                        <script>
+                            for(let i=1; i<=5; i++) {
+                                document.write(`
+                                <div class="bg-black/60 border border-cyan-500/30 rounded-xl p-2.5 flex items-center justify-between font-semibold">
+                                    <div class="flex items-center gap-2 truncate pr-2">
+                                        <span class="font-cyber text-amber-400 font-bold shrink-0">#${i}</span>
+                                        <span class="truncate text-white">TBD <span class="text-[10px] text-gray-400 font-normal">(Team ${i <= 2 ? i : 'TBD'})</span></span>
+                                    </div>
+                                    <div class="w-40 sm:w-44 grid grid-cols-3 text-right font-mono text-[11px] shrink-0 text-gray-300">
+                                        <span>0</span><span>0.00</span><span class="text-cyan-300 font-bold">0</span>
+                                    </div>
+                                </div>`);
+                            }
+                        </script>
+                    </div>
+                    <p class="text-[10px] text-cyan-200 mt-2.5 italic font-sans leading-tight">
+                        * Season 10 bowling records update with wickets, maidens, and economy metrics (Max 2 overs per bowler).
+                    </p>
+                </div>
+
+                <!-- Best Fielder -->
+                <div class="neon-card rounded-2xl p-4 relative overflow-hidden border border-cyan-400/40">
+                    <h3 class="font-cyber font-bold text-sm text-amber-300 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                        <i class="fa-solid fa-hand-fist text-cyan-400"></i> Best Fielder Leaderboard
+                    </h3>
+                    <div class="space-y-1.5 text-xs">
+                        <script>
+                            for(let i=1; i<=5; i++) {
+                                document.write(`
+                                <div class="bg-black/50 border border-cyan-500/30 rounded-xl p-2.5 flex items-center justify-between font-semibold text-gray-300">
+                                    <div class="flex items-center gap-2"><span class="font-cyber text-amber-400 font-bold">#${i}</span><span class="text-white">TBD</span></div>
+                                    <div class="font-mono flex items-center gap-3 text-[11px]"><span>0 Matches</span><span>0 Pts</span></div>
+                                </div>`);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <!-- Man Of The Tournament -->
+                <div class="neon-card rounded-2xl p-4 relative overflow-hidden border border-amber-400/40">
+                    <h3 class="font-cyber font-bold text-sm text-amber-300 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                        <i class="fa-solid fa-award text-amber-400"></i> Player of the Tournament (Season 10)
+                    </h3>
+                    <div class="space-y-1.5 text-xs">
+                        <script>
+                            for(let i=1; i<=5; i++) {
+                                document.write(`
+                                <div class="bg-black/50 border border-amber-500/30 rounded-xl p-2.5 flex items-center justify-between">
+                                    <div class="flex items-center gap-2.5 truncate pr-2">
+                                        <span class="font-cyber text-amber-400 font-bold shrink-0">#${i}</span>
+                                        <div class="truncate">
+                                            <p class="font-bold text-white leading-tight truncate">TBD <span class="text-[10px] text-gray-400 font-normal">(Team ${i <= 2 ? i : 'TBD'})</span></p>
+                                            <p class="text-[10px] text-gray-400 truncate mt-0.5">0 runs + 0 wickets</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <span class="font-cyber font-bold text-xs text-amber-300 bg-black/70 border border-amber-400 px-2.5 py-0.5 rounded block">
+                                            0.0 <span class="text-[9px] text-gray-400 font-normal">/10</span>
+                                        </span>
+                                    </div>
+                                </div>`);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fair Play Ranking -->
+            <div class="neon-card rounded-2xl p-4 space-y-3 border-2 border-amber-400/60">
+                <h3 class="font-cyber font-bold text-sm text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+                    <i class="fa-solid fa-scale-balanced text-cyan-400"></i> Spirit of Cricket & Fair Play Ranking (Season 10)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                    <div class="bg-black/60 border border-cyan-400 text-white font-semibold rounded-xl p-3 flex items-center justify-between shadow-sm">
+                        <div class="flex items-center gap-2.5">
+                            <span class="font-cyber text-cyan-400 font-bold">#1</span>
+                            <span class="font-bold">Team 1 (TBD)</span>
+                        </div>
+                        <span class="font-mono bg-blue-600/30 text-cyan-300 border border-cyan-400 px-2.5 py-0.5 rounded text-[11px] font-bold">0 Pts</span>
+                    </div>
+
+                    <div class="bg-black/60 border border-cyan-400 text-white font-semibold rounded-xl p-3 flex items-center justify-between shadow-sm">
+                        <div class="flex items-center gap-2.5">
+                            <span class="font-cyber text-cyan-400 font-bold">#1</span>
+                            <span class="font-bold">Team 2 (TBD)</span>
+                        </div>
+                        <span class="font-mono bg-blue-600/30 text-cyan-300 border border-cyan-400 px-2.5 py-0.5 rounded text-[11px] font-bold">0 Pts</span>
+                    </div>
+
+                    <div class="bg-black/40 border border-slate-800 text-gray-400 font-semibold rounded-xl p-3 flex items-center justify-between opacity-60">
+                        <div class="flex items-center gap-2.5">
+                            <span class="font-cyber text-gray-500 font-bold">#3</span>
+                            <span>Team 3 (Dormant)</span>
+                        </div>
+                        <span class="font-mono bg-black/60 text-gray-400 px-2.5 py-0.5 rounded text-[11px]">0 Pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: ACCORDION RULES (T12 FORMAT • MAX 2 OVERS PER BOWLER) -->
+        <div id="rules-section" class="tab-content hidden space-y-6">
+            <div class="flex items-center justify-between border-l-4 border-amber-400 pl-3">
+                <h2 class="font-royal font-cyber text-xl font-bold tracking-wide uppercase text-amber-300">
+                    Rules & Regulations (Season 10 • T12 Format)
+                </h2>
+            </div>
+            
+            <div class="neon-card-gold rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-600/30 border-2 border-cyan-400 rounded-xl flex items-center justify-center text-cyan-300 shrink-0 shadow-md">
+                        <i class="fa-solid fa-book text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-cyber font-bold text-sm text-amber-300 uppercase tracking-wide">Official Digital Rulebook</h4>
+                        <p class="text-xs text-cyan-100 mt-0.5">Looking to review complete match protocols, tournament bylaws, and disciplinary standards?</p>
+                    </div>
+                </div>
+                <a href="https://tiger-0824.github.io/SRC_rulebook/" target="_blank" class="bg-[#091E3A] hover:bg-blue-600/40 border-2 border-amber-400 text-amber-300 font-cyber font-bold text-[11px] tracking-wider uppercase px-4 py-2 rounded-lg transition-all shrink-0 shadow-md">
+                    Open Rulebook <i class="fa-solid fa-external-link ml-1 text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="space-y-3 max-w-4xl">
+                <!-- Rule 1: T12 3-Match Series & BOWLING OVER LIMIT 2 ONLY -->
+                <div class="neon-card rounded-xl overflow-hidden border border-cyan-400/50">
+                    <button onclick="toggleAccordion('rule-1')" class="w-full text-left p-4 font-bold text-sm font-cyber uppercase tracking-wide text-amber-100 hover:text-cyan-300 flex justify-between items-center bg-black/50 transition-colors">
+                        <span>1. Match Duration & Bowling Over Limit (Strictly 2 Overs)</span>
+                        <i id="icon-rule-1" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="rule-1" class="hidden p-4 text-xs text-cyan-100 border-t border-cyan-500/30 bg-black/40 space-y-2 leading-relaxed">
+                        <p>• Season 10 will strictly follow official <strong class="text-amber-300">T12 format (12 overs per innings)</strong> on <strong class="text-amber-300">15/11/26 (Sunday)</strong>.</p>
+                        <p>• <strong class="text-cyan-300 uppercase">Strict Bowling Limit:</strong> Each bowler can bowl a <strong class="text-amber-300 text-sm underline">maximum of 2 overs only</strong> throughout the entire innings.</p>
+                        <p>• The tournament will be contested as a <strong class="text-cyan-300">3-match series played consecutively (back-to-back)</strong> on the same match day at L . Park Ground.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="neon-card rounded-xl overflow-hidden border border-cyan-400/50">
+                    <button onclick="toggleAccordion('rule-2')" class="w-full text-left p-4 font-bold text-sm font-cyber uppercase tracking-wide text-amber-100 hover:text-cyan-300 flex justify-between items-center bg-black/50 transition-colors">
+                        <span>2. Official i10 Ball & Equipment</span>
+                        <i id="icon-rule-2" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="rule-2" class="hidden p-4 text-xs text-cyan-100 border-t border-cyan-500/30 bg-black/40 space-y-2 leading-relaxed">
+                        <p>• The entire tournament will be strictly conducted using official <strong class="text-amber-300">i10 balls</strong>.</p>
+                        <p>• Teams are completely responsible for carrying their own playing equipment, specifically cricket bats. Match-ready i10 will be continuously supplied by the on-ground organizing body.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="neon-card rounded-xl overflow-hidden border border-cyan-400/50">
+                    <button onclick="toggleAccordion('rule-3')" class="w-full text-left p-4 font-bold text-sm font-cyber uppercase tracking-wide text-amber-100 hover:text-cyan-300 flex justify-between items-center bg-black/50 transition-colors">
+                        <span>3. Roster Constraints & Registry Roster</span>
+                        <i id="icon-rule-3" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="rule-3" class="hidden p-4 text-xs text-cyan-100 border-t border-cyan-500/30 bg-black/40 space-y-2 leading-relaxed">
+                        <p>• Player registry is open across 34 tournament slots with active players confirmed per squad.</p>
+                        <p>• Only registered players confirmed on the official list are eligible to participate in the matches.</p>
+                        <p>• Any player substitutions during the match require prior inspection and approval from central organizers.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="neon-card rounded-xl overflow-hidden border border-cyan-400/50">
+                    <button onclick="toggleAccordion('rule-4')" class="w-full text-left p-4 font-bold text-sm font-cyber uppercase tracking-wide text-amber-100 hover:text-cyan-300 flex justify-between items-center bg-black/50 transition-colors">
+                        <span>4. Net Run Rate & Standings Calculation</span>
+                        <i id="icon-rule-4" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="rule-4" class="hidden p-4 text-xs text-cyan-100 border-t border-cyan-500/30 bg-black/40 space-y-2 leading-relaxed">
+                        <p class="bg-black/60 p-2.5 rounded border border-cyan-400/50 font-mono text-[11px] text-amber-200">NRR Math Formulation: [Total Runs Scored / Total Overs Faced] - [Total Runs Conceded / Total Overs Bowled]</p>
+                        <p>• <strong class="text-amber-300">Critical Caveat:</strong> If a batting team loses all wickets before batting out their assigned quota, the calculator treats the inning as completing the full assigned 12 overs structurally (<strong class="text-cyan-200">applied overs</strong>).</p>
+                    </div>
+                </div>
+
+                <!-- Rule 5 -->
+                <div class="neon-card rounded-xl overflow-hidden border border-cyan-400/50">
+                    <button onclick="toggleAccordion('rule-5')" class="w-full text-left p-4 font-bold text-sm font-cyber uppercase tracking-wide text-amber-100 hover:text-cyan-300 flex justify-between items-center bg-black/50 transition-colors">
+                        <span>5. Central Umpire Authority & Fair Play Points</span>
+                        <i id="icon-rule-5" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="rule-5" class="hidden p-4 text-xs text-cyan-100 border-t border-cyan-500/30 bg-black/40 space-y-2 leading-relaxed">
+                        <p>• The field umpire's decision is completely absolute, final, and binding under all circumstances.</p>
+                        <p>• Any physical/verbal altercation or behavior undermining match officials triggers negative deduction penalties directly affecting your standings on the <strong class="text-amber-300">Best Discipline Leaderboard</strong> and carries risks of total team disqualification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FULLSCREEN POSTER MODAL -->
+    <div id="poster-modal" class="fixed inset-0 z-50 bg-black/92 backdrop-blur-md hidden items-center justify-center p-3 sm:p-5 transition-all duration-300" onclick="closePosterModal(event)">
+        <div class="relative max-w-xl w-full max-h-[92vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex items-center justify-between mb-2.5 px-1">
+                <div class="flex items-center gap-2">
+                    <span class="text-amber-400">🏏</span>
+                    <span class="font-royal text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-widest">Season 10 Official Flyer</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="banner.png" download="SRC_Season_10_Poster.png" class="text-cyan-200 hover:text-white font-cyber text-xs flex items-center gap-1.5 bg-[#091E3A] hover:bg-blue-900 px-3 py-1.5 rounded-full border border-cyan-400 shadow-md transition-all">
+                        <i class="fa-solid fa-download text-[11px]"></i> <span>Save</span>
+                    </a>
+                    <button onclick="closePosterModal()" class="text-cyan-200 hover:text-white font-cyber text-xs flex items-center gap-1.5 cursor-pointer bg-[#091E3A] hover:bg-blue-900 px-3.5 py-1.5 rounded-full border border-cyan-400 shadow-md transition-all">
+                        <span>Close</span> <i class="fa-solid fa-xmark text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full neon-card-gold rounded-2xl overflow-hidden p-1.5 sm:p-2 border-2 border-amber-400 shadow-[0_0_50px_rgba(0,240,255,0.7)]">
+                <img src="banner.png" alt="Tournament Poster" class="max-h-[76vh] w-auto mx-auto object-contain rounded-xl">
+            </div>
+        </div>
+    </div>
+
+    <!-- TRIBUTE FOOTER -->
+    <footer id="festival-footer" class="relative max-w-6xl mx-auto px-4 mt-14 mb-8 text-center border-t-2 border-cyan-400/50 pt-8 text-xs text-cyan-200 font-cyber tracking-wider space-y-3 overflow-hidden z-20">
+        
+        <!-- Scroll-Activated Master Torch -->
+        <div class="flex flex-col items-center justify-center my-2">
+            <div id="scroll-sacred-diya" class="transition-all duration-1000 transform scale-90 opacity-40">
+                <svg class="w-12 h-12 mx-auto" viewBox="0 0 64 64">
+                    <path id="scroll-diya-flame" class="hidden master-flame" d="M32 6 C24 19, 22 28, 32 36 C42 28, 40 19, 32 6 Z" fill="url(#flameV)"/>
+                    <path d="M10 36 Q32 58 54 36 Z" fill="#0284C7" stroke="#FFD700" stroke-width="1.8"/>
+                </svg>
+            </div>
+            <p id="scroll-diya-caption" class="text-[10px] text-amber-300 font-royal uppercase tracking-widest mt-1 font-bold">
+                Scroll to ignite the Master Blaster Legacy Torch
+            </p>
+        </div>
+
+        <p class="font-impact text-3xl sm:text-4xl text-amber-300 drop-shadow-[0_0_18px_rgba(0,240,255,0.85)] uppercase">
+            🏏 SACHIN RAMESH TENDULKAR • MASTER BLASTER 🏏
+        </p>
+        <p class="font-royal text-xs sm:text-sm text-white max-w-md mx-auto leading-relaxed font-semibold">
+            "Commitment, Passion and Relentless Excellence." Samal Rout Cup Season 10
+        </p>
+
+        <div class="flex items-center justify-center gap-3 text-sm py-1">
+            <span>⭐</span><span>🏏</span><span class="text-amber-300 font-black">#10</span><span>🏏</span><span>⭐</span>
+        </div>
+
+        <p class="text-cyan-400/70">© 2026 SRC. All Rights Reserved.</p>
+        <p class="text-[11px] text-amber-200">
+            Website Engineered with <i class="fa-solid fa-heart text-amber-400 animate-pulse"></i> by 
+            <span class="electric-shimmer font-black tracking-widest uppercase">LALA</span>
+        </p>
+    </footer>
+
+    <!-- MOBILE PERSISTENT BOTTOM NAVIGATION -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#030712]/95 backdrop-blur-md border-t-2 border-cyan-400/60 px-2 py-2 z-40 shadow-[0_-8px_30px_rgba(0,0,0,0.9)]">
+        <div class="max-w-md mx-auto flex items-center justify-between text-cyan-200/80 font-semibold text-[11px] uppercase tracking-wider font-cyber">
+            
+            <button onclick="switchTab('fixtures-section', this)" class="active-tab flex-1 py-2 rounded-xl flex flex-col items-center gap-1 transition-all cursor-pointer">
+                <i class="fa-solid fa-calendar-check text-base"></i>
+                <span>Fixtures</span>
+            </button>
+
+            <button onclick="switchTab('teams-section', this)" class="flex-1 py-2 rounded-xl flex flex-col items-center gap-1 transition-all hover:text-cyan-200 cursor-pointer">
+                <i class="fa-solid fa-people-group text-base"></i>
+                <span>Teams</span>
+            </button>
+
+            <button onclick="switchTab('registry-section', this)" class="flex-1 py-2 rounded-xl flex flex-col items-center gap-1 transition-all hover:text-cyan-200 cursor-pointer">
+                <i class="fa-solid fa-id-card text-base"></i>
+                <span>Players</span>
+            </button>
+
+            <button onclick="switchTab('stats-section', this)" class="flex-1 py-2 rounded-xl flex flex-col items-center gap-1 transition-all hover:text-cyan-200 cursor-pointer">
+                <i class="fa-solid fa-chart-simple text-base"></i>
+                <span>Stats</span>
+            </button>
+
+            <button onclick="switchTab('rules-section', this)" class="flex-1 py-2 rounded-xl flex flex-col items-center gap-1 transition-all hover:text-cyan-200 cursor-pointer">
+                <i class="fa-solid fa-gavel text-base"></i>
+                <span>Rules</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script>
+        // 1. Tab Engine Controller Switching
+        function switchTab(targetSectionId, clickedButton) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            document.getElementById(targetSectionId).classList.remove('hidden');
+            
+            const navButtons = clickedButton.parentElement.querySelectorAll('button');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-cyan-200/80');
+            });
+            
+            clickedButton.classList.add('active-tab');
+            clickedButton.classList.remove('text-cyan-200/80');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 2. Accordion Component Engine
+        function toggleAccordion(panelElementId) {
+            const targetPanel = document.getElementById(panelElementId);
+            const targetChevronIcon = document.getElementById('icon-' + panelElementId);
+            
+            if (targetPanel.classList.contains('hidden')) {
+                targetPanel.classList.remove('hidden');
+                targetChevronIcon.classList.add('rotate-180', 'text-amber-400');
+            } else {
+                targetPanel.classList.add('hidden');
+                targetChevronIcon.classList.remove('rotate-180', 'text-amber-400');
+            }
+        }
+
+        // 3. Poster Modal Controls & Sparkle Blast
+        function openPosterModal() {
+            const modal = document.getElementById('poster-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            
+            if (typeof createFireworkBurst === 'function') {
+                createFireworkBurst(window.innerWidth / 2, window.innerHeight * 0.35);
+            }
+        }
+
+        function closePosterModal() {
+            const modal = document.getElementById('poster-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // 4. Easter Egg 1: Tap Logo 10 Times -> Bat Sound + Fanfare Toast
+        let logoTapCount = 0;
+        let logoTapTimer = null;
+
+        function playBatStrikeSound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+                const now = ctx.currentTime;
+
+                // Willow Bat strike
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(120, now + 0.08);
+
+                gain.gain.setValueAtTime(0.4, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.12);
+
+                // Fanfare Chimes
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+                    const oscTone = ctx.createOscillator();
+                    const toneGain = ctx.createGain();
+                    oscTone.type = 'sine';
+                    oscTone.frequency.setValueAtTime(freq, now + 0.1 + idx * 0.15);
+
+                    toneGain.gain.setValueAtTime(0.001, now + 0.1 + idx * 0.15);
+                    toneGain.gain.exponentialRampToValueAtTime(0.18, now + 0.15 + idx * 0.15);
+                    toneGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2 + idx * 0.15);
+
+                    oscTone.connect(toneGain);
+                    toneGain.connect(ctx.destination);
+                    oscTone.start(now + 0.1 + idx * 0.15);
+                    oscTone.stop(now + 1.4 + idx * 0.15);
+                });
+            } catch (e) {}
+        }
+
+        function handleLogoTap() {
+            logoTapCount++;
+            clearTimeout(logoTapTimer);
+            logoTapTimer = setTimeout(() => { logoTapCount = 0; }, 2600);
+
+            if (logoTapCount >= 10) {
+                logoTapCount = 0;
+                playBatStrikeSound();
+                launchCelebrationFireworks();
+                triggerPetalShower(34);
+
+                const toast = document.getElementById('divine-blessing-toast');
+                toast.classList.remove('hidden');
+                toast.classList.add('flex');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex');
+                }, 3800);
+            }
+        }
+
+        // 5. Easter Egg 2: Scroll to Footer -> Torch Ignites
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const diyaContainer = document.getElementById('scroll-sacred-diya');
+                    const flame = document.getElementById('scroll-diya-flame');
+                    const caption = document.getElementById('scroll-diya-caption');
+                    if (flame && flame.classList.contains('hidden')) {
+                        flame.classList.remove('hidden');
+                        diyaContainer.classList.remove('scale-90', 'opacity-40');
+                        diyaContainer.classList.add('scale-110', 'opacity-100', 'drop-shadow-[0_0_25px_rgba(0,240,255,0.95)]');
+                        caption.textContent = '🏏 Master Blaster Legacy Torch Ignited • Sachin Ramesh Tendulkar 🏏';
+                        caption.classList.add('text-amber-300', 'font-bold');
+                    }
+                }
+            });
+        }, { threshold: 0.45 });
+
+        footerObserver.observe(document.getElementById('festival-footer'));
+
+        // 6. Easter Egg 3: Long-Press Title -> Golden & Cyan Confetti Shower
+        let titlePressTimer = null;
+        function startTitlePress() {
+            titlePressTimer = setTimeout(() => {
+                triggerPetalShower(42);
+            }, 600);
+        }
+        function cancelTitlePress() {
+            clearTimeout(titlePressTimer);
+        }
+
+        function triggerPetalShower(count = 25) {
+            const symbols = ['🏏', '⭐', '10', '✨', '🇮🇳', '🔥'];
+            for (let i = 0; i < count; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal font-cyber font-bold';
+                petal.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                petal.style.left = Math.random() * 96 + 'vw';
+                petal.style.fontSize = (14 + Math.random() * 16) + 'px';
+                petal.style.animationDuration = (3.2 + Math.random() * 3.5) + 's';
+                petal.style.animationDelay = (Math.random() * 0.8) + 's';
+                petal.style.color = ['#FFD700', '#00F0FF', '#FF5400', '#FFFDF5'][Math.floor(Math.random() * 4)];
+                document.body.appendChild(petal);
+                setTimeout(() => petal.remove(), 7500);
+            }
+        }
+
+        // 7. Ambient Golden Sparkles Canvas
+        const canvas = document.getElementById('legend-canvas');
+        const ctx = canvas.getContext('2d');
+        let cw = canvas.width = window.innerWidth;
+        let ch = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            cw = canvas.width = window.innerWidth;
+            ch = canvas.height = window.innerHeight;
+        });
+
+        const embers = Array.from({ length: 48 }, () => ({
+            x: Math.random() * cw,
+            y: Math.random() * ch,
+            r: 1 + Math.random() * 2.2,
+            vy: -0.25 - Math.random() * 0.45,
+            vx: (Math.random() - 0.5) * 0.3,
+            alpha: 0.3 + Math.random() * 0.65,
+            color: ['#FFD700', '#00F0FF', '#0284C7', '#FFB703', '#FFFDF5'][Math.floor(Math.random() * 5)]
+        }));
+
+        let sparks = [];
+        function createFireworkBurst(x, y) {
+            const palette = ['#FFD700', '#00F0FF', '#0284C7', '#38BDF8', '#FF5400', '#FFFDF5'];
+            for (let i = 0; i < 48; i++) {
+                const angle = (Math.PI * 2 * i) / 48;
+                const speed = 1.6 + Math.random() * 4.2;
+                sparks.push({
+                    x, y,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    alpha: 1,
+                    decay: 0.014 + Math.random() * 0.012,
+                    color: palette[Math.floor(Math.random() * palette.length)],
+                    size: 1.8 + Math.random() * 2.2
+                });
+            }
+        }
+
+        function launchCelebrationFireworks() {
+            for (let b = 0; b < 4; b++) {
+                setTimeout(() => {
+                    const rx = cw * (0.2 + Math.random() * 0.6);
+                    const ry = ch * (0.15 + Math.random() * 0.35);
+                    createFireworkBurst(rx, ry);
+                }, b * 320);
+            }
+        }
+
+        function animateLegendCanvas() {
+            ctx.clearRect(0, 0, cw, ch);
+
+            embers.forEach(e => {
+                e.x += e.vx;
+                e.y += e.vy;
+                if (e.y < -10) { e.y = ch + 10; e.x = Math.random() * cw; }
+                if (e.x < -10) e.x = cw + 10;
+                if (e.x > cw + 10) e.x = -10;
+
+                ctx.save();
+                ctx.globalAlpha = e.alpha;
+                ctx.fillStyle = e.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = e.color;
+                ctx.beginPath();
+                ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            });
+
+            for (let i = sparks.length - 1; i >= 0; i--) {
+                const s = sparks[i];
+                s.x += s.vx;
+                s.y += s.vy;
+                s.vy += 0.04;
+                s.alpha -= s.decay;
+
+                if (s.alpha <= 0) {
+                    sparks.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = s.alpha;
+                ctx.fillStyle = s.color;
+                ctx.shadowBlur = 12;
+                ctx.shadowColor = s.color;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            requestAnimationFrame(animateLegendCanvas);
+        }
+
+        animateLegendCanvas();
+        window.addEventListener('load', () => {
+            setTimeout(launchCelebrationFireworks, 450);
+        });
+    </script>
+</body>
+</html>
